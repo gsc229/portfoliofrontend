@@ -6,14 +6,14 @@ import ProjectCard from './ProjectCard';
 const Projects = () => {
 
   const [projects, setProjects] = useState([])
-
+  console.log("PROJECTS: ", projects)
   useEffect(() => {
    
     axiosWithAuth()
-    .get('/')
+    .get('/projects/')
     .then(res=>{
       console.log(res)
-      setProjects(res.data.data)
+      setProjects(res.data)
     })
     .catch(err=>{
       console.log(err)
