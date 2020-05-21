@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react'
+import {Dimmer, Loader, Image, Segment} from 'semantic-ui-react'
 import axiosWithAuth from "../utils/axiosWithAuth"
 //import Project from './Project'
 import ProjectCard from './ProjectCard';
 
 const Projects = () => {
 
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState()
+  
   console.log("PROJECTS: ", projects)
   useEffect(() => {
    
@@ -13,7 +15,7 @@ const Projects = () => {
     .get('/projects/')
     .then(res=>{
       console.log(res)
-      setProjects(res.data)
+      //setProjects(res.data)
     })
     .catch(err=>{
       console.log(err)
@@ -27,7 +29,16 @@ const Projects = () => {
     <div>
       <h1>Here are some projects I made recently</h1>
       {projects ? projects.map((project)=>(<ProjectCard key={project.id} project={project} />))
-    : (<p>There are no projects to show yet</p>)
+    : (    
+      <div>
+      <Segment>
+        <Dimmer active>
+          <Loader inverted>Loading</Loader>
+        </Dimmer>
+        <Image src="" />
+      </Segment>
+      </div>
+      )
     }
     </div>
   );
