@@ -10,18 +10,15 @@ const Projects = () => {
   
   console.log("PROJECTS: ", projects)
   useEffect(() => {
-   
     axiosWithAuth()
     .get('/projects/')
     .then(res=>{
       console.log(res)
-      //setProjects(res.data)
+      setProjects(res.data)
     })
     .catch(err=>{
       console.log(err)
     })
-
-
   }, []);
 
 
