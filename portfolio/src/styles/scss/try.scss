@@ -1,0 +1,12 @@
+.menu{
+  display: flex;
+  
+}
+
+.all-projects-container{
+  display: flex;
+  align-items: center;
+  .card{
+    margin: 20px auto;
+  }
+}
