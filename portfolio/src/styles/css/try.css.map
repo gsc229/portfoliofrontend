@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAA;EACH,OAAO,EAAE,IAAI;CAEd;;AAED,AAAA,uBAAuB,CAAA;EACrB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CAIpB;;AAND,AAGE,uBAHqB,CAGrB,KAAK,CAAA;EACH,MAAM,EAAE,SAAS;CAClB",
+    "sources": [
+        "../scss/try.scss"
+    ],
+    "names": [],
+    "file": "try.css"
+}
