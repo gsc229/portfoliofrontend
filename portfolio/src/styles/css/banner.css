@@ -1,0 +1,66 @@
+#top-banner {
+  width: 100%;
+  min-height: 400px;
+  background-image: url("../../images/nasa_pod_1.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#top-banner #banner-inner-container {
+  border: 3px solid red;
+  width: 50%;
+  border-radius: 10px;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+#top-banner #banner-inner-container img {
+  border: 1px solid greenyellow;
+  height: 15rem;
+  width: 15rem;
+  margin: auto;
+}
+
+#top-banner #banner-inner-container #banner-inner-right {
+  width: 50%;
+  margin: 0 auto;
+  border: hotpink 1px solid;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: whitesmoke;
+  padding: 30px;
+}
+
+#top-banner #banner-inner-container #banner-inner-right .header {
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 800px) {
+  #top-banner #banner-inner-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #top-banner #banner-inner-container #banner-inner-right {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=banner.css.map */
