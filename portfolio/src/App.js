@@ -1,15 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from './utils/axiosWithAuth'
 import {Route, Switch} from 'react-router-dom'
+import {Link} from 'react-scroll'
 import {Sidebar, Segment } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
-import './styles/css/try.css'
+import './styles/css/main.css'
 
 
 import NavBar from './components/NavBar'
 import TopMenu from './components/TopMenu'
 import SideBar from './components/SideBar'
 import Projects from './components/Projects'
+import ProjectView from './components/ProjectView'
 import TopBanner from './components/TopBanner'
 
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -25,9 +27,6 @@ function App() {
   const [projects, setProjects] = useState()
   const [filtered, setFiltered] = useState()
   const featured_projects = projects ? projects.filter(proj=> proj.featured) : ""
-
-  console.log('Featured project : ',featured_projects)
-  console.log("PROJECTS: ", projects)
 
   useEffect(() => {
     axiosWithAuth()
@@ -51,18 +50,26 @@ function App() {
       <Sidebar.Pushable as={Segment}> 
         <SideBar visible={visible} setVisible={setVisible}/>    
         <Sidebar.Pusher dimmed={visible} > 
-        
+              {/* BANNER */}
               <TopBanner featured_projects={featured_projects} />
-              <Route path='/' render={()=><TopMenu setFiltered={setFiltered} projects={projects}  />}/>
+              {/*TOP MENU */}
+              <Route path='/' render={(props)=>
+              <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>
+
               <Switch>
-                
-                <Route path='/' render={()=> <Projects projects={filtered} />  } />
+                {/* PROJECTS */}
+                <Route path='/' render={()=> 
+                <Projects projects={filtered} />  } />
+                <Route path='/project/:id' render={()=> 
+                <ProjectView projects={projects} />  } />
               </Switch>
-            
                 
         </Sidebar.Pusher>
       </Sidebar.Pushable>
-      
+      <div style={{height: '8000px'}} >
+        <Link to='nav-bar' style={{top: '100%', position: 'relative'}}>TOP</Link>
+      </div>
+      <footer style={{background: 'black', height: '100px', width: '100%'}} id='footer'></footer>        
     </React.Fragment>
     
   );
