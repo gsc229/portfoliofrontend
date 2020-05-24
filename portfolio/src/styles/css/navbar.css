@@ -1,5 +1,9 @@
 .nav-bar {
   padding: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,6 +16,9 @@
 .nav-bar h1 {
   font-family: 'Dancing Script', cursive;
   font-weight: bolder;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: white;
   border: blue solid 2px;
   position: relative;

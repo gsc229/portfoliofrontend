@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard';
 
 import '../styles/css/projects.css'
 
-const Projects = ({projects}) => {
+const Projects = ({projects, props}) => {
 
   return (
     <div class='all-projects-container'>    
@@ -14,7 +14,7 @@ const Projects = ({projects}) => {
       
       <Card.Group centered>      
         
-          {projects.map((project)=>(<ProjectCard key={project.id} project={project} />))}
+          {projects.map((project)=>(<ProjectCard props={props} key={project.id} project={project} />))}
         
       </Card.Group>
      
