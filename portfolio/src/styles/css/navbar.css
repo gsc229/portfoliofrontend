@@ -1,0 +1,21 @@
+.nav-bar {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #343A40;
+}
+
+.nav-bar h1 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: bolder;
+  color: white;
+  border: blue solid 2px;
+  position: relative;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+/*# sourceMappingURL=navbar.css.map */

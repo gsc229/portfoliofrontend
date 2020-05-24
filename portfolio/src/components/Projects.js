@@ -1,18 +1,23 @@
 import React from 'react'
-import {Dimmer, Loader, Image, Segment, Card} from 'semantic-ui-react'
+import {Dimmer, Loader, Image, Segment, Card, Transition} from 'semantic-ui-react'
 import axiosWithAuth from "../utils/axiosWithAuth"
 //import Project from './Project'
 import ProjectCard from './ProjectCard';
 
-const Projects = ({projects}) => {
+import '../styles/css/projects.css'
 
+const Projects = ({projects}) => {
 
   return (
     <div class='all-projects-container'>    
       {projects ? 
-      <Card.Group centered>
-      {projects.map((project)=>(<ProjectCard key={project.id} project={project} />))}
+      
+      <Card.Group centered>      
+        
+          {projects.map((project)=>(<ProjectCard key={project.id} project={project} />))}
+        
       </Card.Group>
+     
     : (    
       
       <Segment>        
