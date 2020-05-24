@@ -3,32 +3,43 @@ import { Menu } from 'semantic-ui-react'
 
 
 
-const TopMenu = (props) => {
+const TopMenu = ({setFiltered, projects}) => {
 
-  const [activeItem, setActiveItem] = useState('f')
+  const [activeItem, setActiveItem] = useState('a')
   console.log('activeItem TopMenu: ', activeItem)
   const cycleTo = (value) => {
-
     const key = {
-      'f':'/featured-projects',
-      't':'/team-projects',
-      'c':'/course-projects',
-      'p':'/personal-projects'
-
+      'a': 'all',
+      'f': 'featured',
+      't':'Team Project',
+      'c':'Course Project',
+      'p':'Personal Day Project'
+    }
+    const type = key[value]
+    console.log('type: ',type)
+    let filtered
+    if(type==='all'){
+      filtered = projects
+    } else if(type === 'featured'){
+      filtered = projects.filter(project=>project.featured)
+    } else{
+      filtered = projects ? projects.filter(project=>project.project_type===type) : ''
     }
 
     setActiveItem(value)
-    props.history.push(key[value])
+    setFiltered(filtered)
+    console.log(filtered)
+    //props.history.push(key[value])
   }
 
   const items = [
-    { key: 'featured', active: activeItem === 'f', name: 'Featured', onClick: () => cycleTo('f') },
+    { key: 'all', active: activeItem === 'a', name: 'All', onClick: () => cycleTo('a') },
     { key: 'team-projects', active: activeItem === 't', name: 'Team Projects', onClick: () => cycleTo('t') },
     { key: 'course-projects', active: activeItem === 'c', name: 'Course Projects', onClick: () => cycleTo('c') },
     { key: 'personal-projects', active: activeItem === 'p', name: 'Personal Projects', onClick: () => cycleTo('p') }
   ]
   
-  console.log("TopMenu props: ",props)  
+  
   
   
   return (<Menu items={items} />)

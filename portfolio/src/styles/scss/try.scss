@@ -4,9 +4,14 @@
 }
 
 .all-projects-container{
-  display: flex;
-  align-items: center;
-  .card{
-    margin: 20px auto;
+  
+  .cards{
+    padding: 20px;
+    .card{
+      margin: 1em;
+    }
   }
+  // Change
+  
 }
+
