@@ -1,0 +1,21 @@
+.project-view-container{
+
+  .project-links{
+    border: 2px solid green;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    @media only screen and (max-width: 800px){
+      font-size: 1.5rem;
+      a{
+        margin: 15px;
+      }
+    }
+    margin: 10px;
+    font-size: 2rem;
+  }
+
+  .image{
+    margin: auto;
+  }
+}

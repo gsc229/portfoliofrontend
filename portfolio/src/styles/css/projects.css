@@ -1,7 +1,10 @@
-.menu {
+#top-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  border: solid red 3px;
+  top: -70px;
 }
 
 .all-projects-container {

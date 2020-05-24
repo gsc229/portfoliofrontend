@@ -1,1 +1,26 @@
-/* No CSS *//*# sourceMappingURL=project_view.css.map */
+.project-view-container .project-links {
+  border: 2px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 10px;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .project-view-container .project-links {
+    font-size: 1.5rem;
+  }
+  .project-view-container .project-links a {
+    margin: 15px;
+  }
+}
+
+.project-view-container .image {
+  margin: auto;
+}
+/*# sourceMappingURL=project_view.css.map */

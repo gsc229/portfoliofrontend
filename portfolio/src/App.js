@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axiosWithAuth from './utils/axiosWithAuth'
 import {Route, Switch} from 'react-router-dom'
 import {Link} from 'react-scroll'
-import {Sidebar, Segment } from 'semantic-ui-react'
+import {Sidebar, Segment} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './styles/css/main.css'
 
@@ -18,7 +18,7 @@ import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
 import {far} from '@fortawesome/free-regular-svg-icons'
 import {fas} from '@fortawesome/free-solid-svg-icons'
-
+// add all off the fontawesome categories to the library
 library.add(fab, far, fas)
 
 function App() {
@@ -43,30 +43,35 @@ function App() {
 
 
   return (
-    <React.Fragment>  
-      <NavBar setVisible={setVisible} />
+    <React.Fragment>
+      <NavBar setVisible={setVisible} /> 
       
-         
-      <Sidebar.Pushable as={Segment}> 
-        <SideBar visible={visible} setVisible={setVisible}/>    
-        <Sidebar.Pusher dimmed={visible} > 
-              {/* BANNER */}
-              <TopBanner featured_projects={featured_projects} />
-              {/*TOP MENU */}
-              <Route path='/' render={(props)=>
-              <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>
+        
+          <Sidebar.Pushable className='main-container' as={Segment}> 
+            <SideBar visible={visible} setVisible={setVisible}/>    
+            <Sidebar.Pusher dimmed={visible} > 
+                  {/* BANNER */}
+                  <TopBanner featured_projects={featured_projects} />
+                  {/*TOP MENU */}
+                  <div id='top-menu-scroll-to' ></div>
+                  <Route path='/' render={(props)=>
+                  <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>
+    
+                  <Switch>
+                    {/* PROJECTS */}
+                    <Route exact path='/' render={(props)=> 
+                    <Projects props={props} projects={filtered} />  } />
+    
+                    <Route path='/project/:id' render={(props)=> 
+                    <ProjectView projects={projects} props={props} />  } />
+                  </Switch>
+                    
+            </Sidebar.Pusher>
+          </Sidebar.Pushable>
+        
+     
 
-              <Switch>
-                {/* PROJECTS */}
-                <Route path='/' render={()=> 
-                <Projects projects={filtered} />  } />
-                <Route path='/project/:id' render={()=> 
-                <ProjectView projects={projects} />  } />
-              </Switch>
-                
-        </Sidebar.Pusher>
-      </Sidebar.Pushable>
-      <div style={{height: '8000px'}} >
+      <div style={{height: '8000px'}}>
         <Link to='nav-bar' style={{top: '100%', position: 'relative'}}>TOP</Link>
       </div>
       <footer style={{background: 'black', height: '100px', width: '100%'}} id='footer'></footer>        
