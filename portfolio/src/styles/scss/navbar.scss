@@ -2,19 +2,26 @@
   padding: 20px;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 1;
   width: 100%; 
   display: flex;
   justify-content: space-between;  
   background-color: #343A40;
+  .left-controls{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    
+  }
   h1{
     font-family: 'Dancing Script', cursive;
     font-weight: bolder;
     width: fit-content;
+    margin-right: 20px;
     color: white;
-    border: blue solid 2px;
     position: relative;
     align-self: flex-start;
+    cursor: pointer;
   }
 }
 

@@ -5,7 +5,7 @@ import {faGrav} from '@fortawesome/free-brands-svg-icons'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import '../styles/css/project_view.css'
 import { faRoad } from '@fortawesome/free-solid-svg-icons'
-console.log('LIBRARY: ', library)
+import TechLegend from './TechLegend'
 
 
 
@@ -14,7 +14,9 @@ export default function ProjectView({projects, props}) {
   const {back_end_repo, website, web_icon, top_photo, created_at, description, front_end_repo,
          project_type, responsibilities, roles, technologies, title} = project
   const fa_web_icon = web_icon ? [web_icon.slice(0,3), web_icon.slice(7, web_icon.length)] : ""
-  console.log(fa_web_icon)
+  
+
+
   return (    
     <Segment className='project-view-container'>      
       <Header as='h1'>{title}</Header>
@@ -38,27 +40,39 @@ export default function ProjectView({projects, props}) {
         }
         
         <List.Item>
-          <a href="https://market-ave.netlify.app/" style={{textDecoration: 'none'}}>
+          <a href={website} style={{textDecoration: 'none'}}>
             <FontAwesomeIcon size='lg' icon={fa_web_icon} />
             &nbsp; Website</a>
         </List.Item>      
-      </List>{/*END LINKS  */}
-     
-    
-     
-      <Container>
+      </List>{/*END LINKS  */} 
+
+
+      <Container className='info-container'>
         <Grid columns={2} relaxed='very'>
           <Grid.Column>
-          <Image size='huge' src={top_photo} alt=""/>
+          <Image className='view-image' size='huge' src={top_photo} alt=""/>
           </Grid.Column>
           <Grid.Column>
-            <p>{description}</p>
-            <p>{roles}</p>
+            {description && <p><h3>About: </h3>{description}</p>}
+            {roles && <p><h3>Roles: </h3>{roles}</p>}
+            {responsibilities && <p><h3>Responsibilities: </h3>{responsibilities}</p>}
+            <h3>Technologies: </h3>
+
+            <div id='tech-container'>
+            {technologies &&               
+              technologies.map(tech=>(
+                <p>
+                  
+                  <TechLegend tech={tech} />
+                </p>
+              ))
+            }
+           
+            </div>
+            
           </Grid.Column>
         </Grid>        
-        <Divider vertical />
       </Container>
-
     </Segment>
     
   )

@@ -20,7 +20,112 @@
   }
 }
 
-.project-view-container .image {
+.project-view-container .info-container {
+  border: 2px solid yellow;
+  width: 100%;
+}
+
+.project-view-container .info-container .image {
   margin: auto;
+  border: solid black 4px;
+  cursor: pointer;
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+  -webkit-transition: -webkit-box-shadow .7s;
+  transition: -webkit-box-shadow .7s;
+  transition: box-shadow .7s;
+  transition: box-shadow .7s, -webkit-box-shadow .7s;
+}
+
+.project-view-container .info-container .image:hover {
+  -webkit-box-shadow: -1px 2px 11px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 2px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+#tech-container {
+  border: 2px solid magenta;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#tech-container .skill-logo {
+  font-size: 50px;
+}
+
+#tech-container #node-express {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#tech-container #python-django {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#tech-container #mongo-mongoose {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#tech-container #mongoose {
+  font-size: 30px;
+  font-weight: 100;
+  text-indent: -2px;
+  letter-spacing: -4px;
+  color: #800;
+}
+
+#tech-container #python {
+  color: #3975A5;
+}
+
+#tech-container #django {
+  color: forestgreen;
+}
+
+#tech-container #node {
+  color: lime;
+}
+
+#tech-container #jinja {
+  width: 100px;
+}
+
+#tech-container #cloudinary {
+  width: 150px;
+}
+
+#tech-container #digital-ocean {
+  width: 60px;
+}
+
+#tech-container #react-router {
+  width: 150px;
+}
+
+#tech-container #styled-components {
+  width: 100px;
+}
+
+#tech-container #react p {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#tech-container #axios {
+  font-size: 20px;
 }
 /*# sourceMappingURL=project_view.css.map */

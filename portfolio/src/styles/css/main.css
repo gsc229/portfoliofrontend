@@ -1,14 +1,19 @@
-#main-projects-container {
-  border: 2px solid purple;
-  width: 90%;
+.main-container {
   position: relative;
+  top: 60px;
+  border: 2px solid greenyellow;
+}
+
+#main-projects-container {
+  width: 99%;
+  position: relative;
+  margin-top: 10px;
   top: -70px;
 }
 
 .pushable {
   border: yellow 3px solid;
   position: relative;
-  top: 60px;
 }
 
 #top-menu-scroll-to {
