@@ -9,10 +9,9 @@ export default function ProjectCard({project, props}) {
       'Personal Day Project': 'green',
       'Team Project': 'purple'
   }
-  // Generate random colors
-  const rand = Math.ceil(Math.random() * 7)
+  
   // card info:
-  const {back_end_repo, website, top_photo, created_at, description, front_end_repo, project_type, responsibilities, roles, technologies, title} = project
+  const {website, top_photo, project_type,  title} = project
   
   
   return (
@@ -24,7 +23,7 @@ export default function ProjectCard({project, props}) {
       
             </Card.Content>
             <Card.Content extra>
-              <a>
+              <a href='/'>
                 <p>{project_type}</p>
               </a>
             </Card.Content>
