@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axiosWithAuth from './utils/axiosWithAuth'
 import {Route, Switch} from 'react-router-dom'
 import {Link} from 'react-scroll'
-import {Sidebar, Segment} from 'semantic-ui-react'
+import {Sidebar, Segment, Container} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './styles/css/main.css'
 
@@ -27,7 +27,7 @@ function App() {
   const [projects, setProjects] = useState()
   const [filtered, setFiltered] = useState()
   const featured_projects = projects ? projects.filter(proj=> proj.featured) : ""
-
+  // fetch data
   useEffect(() => {
     axiosWithAuth()
     .get('/projects/')
@@ -54,17 +54,20 @@ function App() {
                   <TopBanner featured_projects={featured_projects} />
                   {/*TOP MENU */}
                   <div id='top-menu-scroll-to' ></div>
+                  
+    
+                  <Container id='main-projects-container'>
                   <Route path='/' render={(props)=>
                   <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>
-    
-                  <Switch>
-                    {/* PROJECTS */}
-                    <Route exact path='/' render={(props)=> 
-                    <Projects props={props} projects={filtered} />  } />
-    
-                    <Route path='/project/:id' render={(props)=> 
-                    <ProjectView projects={projects} props={props} />  } />
-                  </Switch>
+                    <Switch>
+                      {/* PROJECTS */}
+                      <Route exact path='/' render={(props)=> 
+                      <Projects props={props} projects={filtered} />  } />
+      
+                      <Route path='/project/:id' render={(props)=> 
+                      <ProjectView projects={projects} props={props} />  } />
+                    </Switch>
+                  </Container>
                     
             </Sidebar.Pusher>
           </Sidebar.Pushable>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image, Segment, Header, Divider, List} from 'semantic-ui-react'
+import {Image, Segment, Header, Divider, List, Container, Grid} from 'semantic-ui-react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGrav} from '@fortawesome/free-brands-svg-icons'
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -14,7 +14,7 @@ export default function ProjectView({projects, props}) {
   const {back_end_repo, website, web_icon, top_photo, created_at, description, front_end_repo,
          project_type, responsibilities, roles, technologies, title} = project
   const fa_web_icon = web_icon ? [web_icon.slice(0,3), web_icon.slice(7, web_icon.length)] : ""
-  
+  console.log(fa_web_icon)
   return (    
     <Segment className='project-view-container'>      
       <Header as='h1'>{title}</Header>
@@ -44,8 +44,20 @@ export default function ProjectView({projects, props}) {
         </List.Item>      
       </List>{/*END LINKS  */}
      
-      <Image size='massive' src={top_photo} alt=""/>
-      <Divider />
+    
+     
+      <Container>
+        <Grid columns={2} relaxed='very'>
+          <Grid.Column>
+          <Image size='huge' src={top_photo} alt=""/>
+          </Grid.Column>
+          <Grid.Column>
+            <p>{description}</p>
+            <p>{roles}</p>
+          </Grid.Column>
+        </Grid>        
+        <Divider vertical />
+      </Container>
 
     </Segment>
     

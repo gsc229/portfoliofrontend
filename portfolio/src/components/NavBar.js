@@ -7,7 +7,7 @@ const NavBar = ({setVisible}) => {
 
 
   return (
-    <Menu fixed inverted id='nav-bar' className='nav-bar'>
+    <div fixed inverted id='nav-bar' className='nav-bar'>
       <Link 
       to='top-menu-scroll-to'
       smooth={true}
@@ -17,7 +17,7 @@ const NavBar = ({setVisible}) => {
       </Link>
       <Button onClick={()=>{setVisible(true)}} >More Projects</Button>  
       <Link to='/featured-project' >Featured</Link>
-    </Menu>
+    </div>
   );
 }
 
