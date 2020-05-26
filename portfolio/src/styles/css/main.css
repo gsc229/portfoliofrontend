@@ -3,7 +3,6 @@
 }
 
 #top-menu-scroll-to {
-  border: blue 2px solid;
   position: relative;
   top: -70px;
   height: 70px;
@@ -14,12 +13,25 @@
   display: block;
   position: fixed;
   top: 60px;
-  background-color: 128;
+}
+
+#side-bar .item {
+  color: #43B3E0;
+}
+
+#side-bar .item p {
+  color: white;
+}
+
+#side-bar .item:hover {
+  color: yellow;
 }
 
 #side-bar .sidebar-icon {
   font-size: 1.5rem;
-  color: #43B3E0;
+  color: inherit;
+  -webkit-transition: color 1s;
+  transition: color 1s;
 }
 
 #side-bar .sidebar-icon:hover {
