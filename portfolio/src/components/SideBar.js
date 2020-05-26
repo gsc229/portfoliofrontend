@@ -1,66 +1,83 @@
 //import { useBooleanKnob } from '@stardust-ui/docs-components'
-import React, {useState} from 'react'
-import { Header, Icon, Image, Menu, Segment, Sidebar, Button} from 'semantic-ui-react'
+import React, {useState } from 'react'
+import {  Menu, Sidebar } from 'semantic-ui-react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import SidebarLabel from './SideBarLabel'
+
 const SidebarExampleSidebar = ({visible, setVisible}) => {
   
   const [activeItem, setActiveItem] = useState()
 
+  
   const handleItemClick = (e)=>{
     
     setActiveItem(e.target.id)
-    console.log(activeItem)
-    console.log("HHHHHHIIIIIIIIII!!!!!!!", e.target.id, e.target)
+    
   }
   
  
 
   return (
-      <div>
         
-        <Sidebar
-          as={Menu}
-          animation='overlay'
-          icon='labeled'
-          inverted
-          onHide={() => setVisible(false)}
-          vertical
-          visible={visible}
-          width='thin'
-        > 
-          <button onClick={()=>alert('CLICKED')} >TEST BUTTON</button>
-          <Menu.Item 
-            as='a'
-            name='course-projects'
-            id='team-projects' 
-            active={activeItem === 'team-projects'} 
-            onClick={handleItemClick}  
-            >      
-            Projects from courses
-          </Menu.Item>
-          <Menu.Item 
-            as='a' 
-            name='team-projects'
-            id='team-projects'
-            active={activeItem === 'team-projects'} 
-            onClick={handleItemClick} 
-             >
-          <FontAwesomeIcon icon="people-carry" />
-            Team Projects
-          </Menu.Item >
-          <Menu.Item 
-            as='a' 
-            name='day-projects'
-            id='day-projects'
-            active={activeItem === 'day-projects'}
-            onClick={()=>alert('HHHHHHEEEEEEYYYYYY!!!!!!')} 
-            >
-            <Icon name='camera' />
-            Day Projects
-          </Menu.Item>
-        </Sidebar>
-      </div>
+      <Sidebar
+        id='side-bar'
+        as={Menu}
+        animation='push'
+        icon='labeled'
+        inverted
+        onHide={() => setVisible(false)}
+        vertical
+        direction='right'
+        visible={visible}
+        width='thin'
+      > 
+          
+            <Menu.Item 
+              as='a' 
+              name='resume'
+              id='resume'
+              active={activeItem === 'resume'} 
+              onClick={handleItemClick}
+              href='https://resume.io/r/l8u6bawut' 
+              >
+                <FontAwesomeIcon  className='sidebar-icon'  icon={['far', 'file-pdf']} />&nbsp;
+                <br/><br/>Resume
+            </Menu.Item >
+
+            <Menu.Item 
+              as='a' 
+              name='contact'
+              id='contact'
+              active={activeItem === 'contact'}
+              onClick={handleItemClick}
+              >
+                <FontAwesomeIcon  className='sidebar-icon' icon={['far', 'paper-plane']} />&nbsp;
+                <br/><br/>Contact
+            </Menu.Item>
+
+            <Menu.Item 
+              as='a'
+              href='https://www.linkedin.com/in/greg-cameron-90488b30/' 
+              name='linked-in'
+              id='linked-in'
+              active={activeItem === 'linked-in'}
+              onClick={handleItemClick}
+              >
+                <FontAwesomeIcon className='sidebar-icon social'  icon={['fab', 'linkedin']} />
+            </Menu.Item>
+
+            <Menu.Item 
+              as='a'
+              href='https://github.com/gsc229' 
+              name='git-hub'
+              id='git-hub'
+              active={activeItem === 'git-hub'}
+              onClick={handleItemClick}
+              >
+                <FontAwesomeIcon className='sidebar-icon social'  icon={['fab', 'github-square']} />
+            </Menu.Item>
+
+       </Sidebar>
+      
   )
 }
 

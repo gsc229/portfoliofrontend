@@ -1,18 +1,4 @@
-.main-container {
-  position: relative;
-  top: 60px;
-  border: 2px solid greenyellow;
-}
-
-#main-projects-container {
-  width: 99%;
-  position: relative;
-  margin-top: 10px;
-  top: -70px;
-}
-
 .pushable {
-  border: yellow 3px solid;
   position: relative;
 }
 
@@ -22,5 +8,21 @@
   top: -70px;
   height: 70px;
   margin: 0 auto;
+}
+
+#side-bar {
+  display: block;
+  position: fixed;
+  top: 60px;
+  background-color: 128;
+}
+
+#side-bar .sidebar-icon {
+  font-size: 1.5rem;
+  color: #43B3E0;
+}
+
+#side-bar .sidebar-icon:hover {
+  color: yellow;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,8 @@
+.project-view-container {
+  min-height: 900px;
+}
+
 .project-view-container .project-links {
-  border: 2px solid green;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,13 +24,11 @@
 }
 
 .project-view-container .info-container {
-  border: 2px solid yellow;
   width: 100%;
 }
 
 .project-view-container .info-container .image {
   margin: auto;
-  border: solid black 4px;
   cursor: pointer;
   -webkit-box-shadow: 0;
           box-shadow: 0;
@@ -43,7 +44,6 @@
 }
 
 #tech-container {
-  border: 2px solid magenta;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

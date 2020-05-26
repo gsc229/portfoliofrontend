@@ -1,6 +1,6 @@
 import React from 'react'
-import {Dimmer, Loader, Image, Segment, Card, Transition} from 'semantic-ui-react'
-import axiosWithAuth from "../utils/axiosWithAuth"
+import {Dimmer, Loader, Image, Segment, Card} from 'semantic-ui-react'
+
 //import Project from './Project'
 import ProjectCard from './ProjectCard';
 

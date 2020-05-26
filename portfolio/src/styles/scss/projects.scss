@@ -1,17 +1,32 @@
+#main-projects-container{
+  //border: 2px solid purple;
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+  top: -70px;
+}
+
 #top-menu{
   display: flex;
-  border: solid red 3px;
-  //change this 
+  //border: solid red 3px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  background-color: white;
+  .item{
+    border-right: solid 1px lightgray;
+  }
+
 }
 
 .all-projects-container{
-  border: blue 2px solid;
+  //border: blue 2px solid;
   min-height: 900px;
   padding: 20px;
   
- #project-cards-container{
-   display: flex;
- }
+  #project-cards-container{
+    display: flex;
+  }
     
   
   
