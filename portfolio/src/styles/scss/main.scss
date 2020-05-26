@@ -4,8 +4,9 @@
   //top: 60px;
 }
 
+// an invisible, dummy tag for scrolling to the correct height 
 #top-menu-scroll-to{
-  border: blue 2px solid;
+  //border: blue 2px solid;
   position: relative;
   top: -70px;
   height: 70px;
@@ -16,16 +17,28 @@
   display: block;
   position: fixed;
   top: 60px;
-  background-color: green($color: green);
-
-
-  .sidebar-icon{
-    font-size: 1.5rem;
+  
+  .item{
     color: #43B3E0;
+    
+    p{
+      color: white;
+      
+    }
     &:hover{
       color: yellow;
     }
-    
+  }
+
+  
+
+  .sidebar-icon{
+    font-size: 1.5rem;
+    color: inherit;
+    transition: color 1s;
+    &:hover{
+      color: yellow;
+    }
   }
 
 }

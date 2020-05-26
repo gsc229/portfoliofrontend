@@ -1,6 +1,5 @@
 #top-banner {
   width: 100%;
-  border: 2px solid yellow;
   min-height: 400px;
   background-image: url("../../images/nasa_pod_1.jpg");
   background-attachment: fixed;
@@ -25,7 +24,6 @@
 }
 
 #top-banner #banner-inner-container {
-  border: 3px solid red;
   width: 50%;
   margin-top: 60px;
   border-radius: 10px;
@@ -48,6 +46,7 @@
 }
 
 #top-banner #banner-inner-container img {
+  border: 1px solid greenyellow;
   height: 15rem;
   width: 15rem;
   margin: 20px;

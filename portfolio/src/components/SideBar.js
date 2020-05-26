@@ -40,7 +40,7 @@ const SidebarExampleSidebar = ({visible, setVisible}) => {
               href='https://resume.io/r/l8u6bawut' 
               >
                 <FontAwesomeIcon  className='sidebar-icon'  icon={['far', 'file-pdf']} />&nbsp;
-                <br/><br/>Resume
+                <br/><br/><p>Resume</p>
             </Menu.Item >
 
             <Menu.Item 
@@ -51,7 +51,7 @@ const SidebarExampleSidebar = ({visible, setVisible}) => {
               onClick={handleItemClick}
               >
                 <FontAwesomeIcon  className='sidebar-icon' icon={['far', 'paper-plane']} />&nbsp;
-                <br/><br/>Contact
+                <br/><br/><p>Contact</p>
             </Menu.Item>
 
             <Menu.Item 

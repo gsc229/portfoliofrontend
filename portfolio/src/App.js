@@ -53,12 +53,7 @@ function App() {
            
                                  
       <Sidebar.Pusher dimmed={visible} >
-          
-          
-          
-            
-            
-          
+     
           {/* BANNER */}
           <TopBanner featured_projects={featured_projects} />
           {/*TOP MENU */}
