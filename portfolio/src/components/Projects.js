@@ -1,6 +1,6 @@
 import React from 'react'
 import {Dimmer, Loader, Image, Segment, Card} from 'semantic-ui-react'
-
+import {Link} from 'react-scroll'
 //import Project from './Project'
 import ProjectCard from './ProjectCard';
 
@@ -14,7 +14,7 @@ const Projects = ({projects, props}) => {
       
       <Card.Group centered>      
         
-          {projects.map((project)=>(<ProjectCard props={props} key={project.id} project={project} />))}
+          {projects.map((project)=>(<ProjectCard  props={props} key={project.id} project={project} />))}
         
       </Card.Group>
      

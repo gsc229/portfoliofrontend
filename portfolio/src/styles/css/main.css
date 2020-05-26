@@ -30,8 +30,8 @@
 #side-bar .sidebar-icon {
   font-size: 1.5rem;
   color: inherit;
-  -webkit-transition: color 1s;
-  transition: color 1s;
+  -webkit-transition: color .8s;
+  transition: color .8s;
 }
 
 #side-bar .sidebar-icon:hover {

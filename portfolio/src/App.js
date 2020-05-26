@@ -12,6 +12,7 @@ import SideBar from './components/SideBar'
 import Projects from './components/Projects'
 import ProjectView from './components/ProjectView'
 import TopBanner from './components/TopBanner'
+import Contact from './components/Contact'
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fab} from '@fortawesome/free-brands-svg-icons'
@@ -46,34 +47,44 @@ function App() {
 
   return (
     <React.Fragment> 
-      <NavBar setVisible={setVisible} visible={visible} callRefetch={callRefetch} /> 
+      <Route path='/' render={(props)=> 
+      <NavBar props={props} setVisible={setVisible} visible={visible} callRefetch={callRefetch} />   } />
+      
+
       <Sidebar.Pushable className='main-container' as={Segment}> 
+      {/* SIDEBAR */}
+      <Route path='/' render={(props)=>
+      <SideBar props={props} visible={visible} setVisible={setVisible}/> } />
       
-      <SideBar visible={visible} setVisible={setVisible}/> 
            
-                                 
-      <Sidebar.Pusher dimmed={visible} >
-     
-          {/* BANNER */}
-          <TopBanner featured_projects={featured_projects} />
-          {/*TOP MENU */}
-          <div id='top-menu-scroll-to' ></div>            
-
-          <Container id='main-projects-container'>
-            <Route path='/' render={(props)=>
-            <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>
+   
+        <Sidebar.Pusher dimmed={visible} >
       
-            <Switch>
-              {/* PROJECTS */}
-              <Route exact path='/' render={(props)=> 
-              <Projects props={props} projects={filtered} />  } />
+            {/* BANNER */}
+            <TopBanner featured_projects={featured_projects} />
+            {/*TOP MENU DUMMY DIV */}
+            <div id='top-menu-scroll-to' ></div>            
 
-              <Route path='/project/:id' render={(props)=> 
-              <ProjectView projects={projects} props={props} />  } />
-            </Switch>
-          </Container>
-                 
-      </Sidebar.Pusher>
+            <Container id='main-projects-container'>
+                {/* TOP MENU */}
+                <Route exact path='/' render={(props)=>
+                <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>
+        
+                {/* PROJECTS */}
+                <Route exact path='/' render={(props)=> 
+                <Projects props={props} projects={filtered} />} />
+                
+                {/* PROJECT */}
+                <Route path='/project/:id' render={(props)=> 
+                <ProjectView projects={projects} props={props} />} />
+
+                {/* CONTACT */}
+                <Route path='/contact' render={(props)=>
+                <Contact  props={props} />}/>
+              
+            </Container>
+                  
+        </Sidebar.Pusher>
       </Sidebar.Pushable> 
     </React.Fragment> 
   );

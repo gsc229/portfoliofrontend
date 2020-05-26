@@ -5,5 +5,7 @@
             "extensionName": ".css",
             "savePath": "/portfolio/src/styles/css"
         }
-    ]
+    ],
+    "editor.tabSize": 2,
+    "prettier.tabWidth": 2
 }

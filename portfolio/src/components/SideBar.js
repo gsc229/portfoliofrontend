@@ -1,9 +1,10 @@
 //import { useBooleanKnob } from '@stardust-ui/docs-components'
-import React, {useState } from 'react'
-import {  Menu, Sidebar } from 'semantic-ui-react'
+import React, {useState} from 'react'
+import {Menu, Sidebar} from 'semantic-ui-react'
+import {Link} from 'react-scroll'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-const SidebarExampleSidebar = ({visible, setVisible}) => {
+const SidebarExampleSidebar = ({visible, setVisible, props}) => {
   
   const [activeItem, setActiveItem] = useState()
 
@@ -14,7 +15,11 @@ const SidebarExampleSidebar = ({visible, setVisible}) => {
     
   }
   
- 
+  const contactClick = (e)=>{
+    setActiveItem(e.target.id)
+    props.history.push('/contact')
+    setVisible(false)
+  }
 
   return (
         
@@ -44,11 +49,14 @@ const SidebarExampleSidebar = ({visible, setVisible}) => {
             </Menu.Item >
 
             <Menu.Item 
-              as='a' 
+              as={Link}
+              to='top-menu-scroll-to'
+              smooth={true}              
+              duration={800}   
               name='contact'
               id='contact'
               active={activeItem === 'contact'}
-              onClick={handleItemClick}
+              onClick={contactClick}
               >
                 <FontAwesomeIcon  className='sidebar-icon' icon={['far', 'paper-plane']} />&nbsp;
                 <br/><br/><p>Contact</p>
