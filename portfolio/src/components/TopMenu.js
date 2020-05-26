@@ -6,8 +6,7 @@ import { Menu } from 'semantic-ui-react'
 const TopMenu = ({setFiltered, filtered, projects, props}) => {
 
   const [activeItem, setActiveItem] = useState('a')
-  console.log('activeItem TopMenu: ', activeItem)
-  console.log('TopMenu props: ', props)
+  
 
   
 
@@ -21,7 +20,7 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
       'p':'Personal Day Project'
     }
     const type = key[value]
-    console.log('type: ',type)
+    
     
     if(type==='all'){      
       filtered = projects
@@ -34,7 +33,7 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
     setActiveItem(value)
     
     setFiltered(filtered)
-    console.log(filtered)  
+     
     props.history.push('/')
   }
 
@@ -45,15 +44,8 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
     { key: 'personal-projects', active: activeItem === 'p', name: 'Personal Projects', onClick: () => cycleTo('p'),color: 'green' , style: {color: 'black'} }
   ]
   
-  const colors = {
-    'a': 'yellow',
-    't': 'red',
-    'c': 'blue',
-    'p': 'green'
-  }
-  
-  
-  return (<Menu id='top-menu' style={{background: 'white'}} inverted items={items} />)
+   
+  return (<Menu id='top-menu' inverted items={items} />)
 
 }
 

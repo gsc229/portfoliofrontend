@@ -1,18 +1,15 @@
 import React from 'react'
-import {Image, Segment, Header, Divider, List, Container, Grid} from 'semantic-ui-react'
+import {Image, Segment, Header, List, Container, Grid} from 'semantic-ui-react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faGrav} from '@fortawesome/free-brands-svg-icons'
-import {library} from '@fortawesome/fontawesome-svg-core'
 import '../styles/css/project_view.css'
-import { faRoad } from '@fortawesome/free-solid-svg-icons'
+
 import TechLegend from './TechLegend'
 
 
 
 export default function ProjectView({projects, props}) {  
-  const project = projects ? projects.filter(project=> project.id == props.match.params.id)[0] : "Wait for it, wait for it..."
-  const {back_end_repo, website, web_icon, top_photo, created_at, description, front_end_repo,
-         project_type, responsibilities, roles, technologies, title} = project
+  const project = projects ? projects.filter(project=> project.id.toString() === props.match.params.id)[0] : "Wait for it, wait for it..."
+  const {back_end_repo, website, web_icon, top_photo, description, front_end_repo, responsibilities, roles, technologies, title} = project
   const fa_web_icon = web_icon ? [web_icon.slice(0,3), web_icon.slice(7, web_icon.length)] : ""
   
 
@@ -61,10 +58,9 @@ export default function ProjectView({projects, props}) {
             <div id='tech-container'>
             {technologies &&               
               technologies.map(tech=>(
-                <p>
-                  
-                  <TechLegend tech={tech} />
-                </p>
+                               
+                  <TechLegend key={project.id} tech={tech} />
+                
               ))
             }
            

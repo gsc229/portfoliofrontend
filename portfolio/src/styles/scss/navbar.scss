@@ -6,13 +6,20 @@
   width: 100%; 
   display: flex;
   justify-content: space-between;  
-  background-color: #343A40;
+  background-color: #1B1C1D;
   .left-controls{
     display: flex;
     justify-content: space-between;
     width: fit-content;
     
   }
+
+  .right-controls{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+  }
+
   h1{
     font-family: 'Dancing Script', cursive;
     font-weight: bolder;

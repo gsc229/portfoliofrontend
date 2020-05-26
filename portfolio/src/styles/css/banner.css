@@ -1,9 +1,10 @@
 #top-banner {
   width: 100%;
+  border: 2px solid yellow;
   min-height: 400px;
   background-image: url("../../images/nasa_pod_1.jpg");
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,9 +16,18 @@
           justify-content: center;
 }
 
+@media only screen and (max-width: 800px) {
+  #top-banner {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
 #top-banner #banner-inner-container {
   border: 3px solid red;
   width: 50%;
+  margin-top: 60px;
   border-radius: 10px;
   padding: 30px;
   display: -webkit-box;
@@ -29,14 +39,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  #top-banner #banner-inner-container {
+    width: 100%;
+  }
 }
 
 #top-banner #banner-inner-container img {
-  border: 1px solid greenyellow;
   height: 15rem;
   width: 15rem;
-  margin: auto;
+  margin: 20px;
 }
 
 #top-banner #banner-inner-container #banner-inner-right {

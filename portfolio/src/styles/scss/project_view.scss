@@ -1,7 +1,7 @@
 .project-view-container{
-
+  min-height: 900px;
   .project-links{
-    border: 2px solid green;
+    //border: 2px solid green;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -17,11 +17,10 @@
 
 
   .info-container{
-    border: 2px solid yellow;
+    //border: 2px solid yellow;
     width: 100%;
     .image{
-      margin: auto;
-      border: solid black 4px;
+      margin: auto;     
       //width: 90%;
       //margin: 30px auto;
       cursor: pointer;
@@ -44,7 +43,7 @@
 
 
 #tech-container{
-  border: 2px solid magenta;
+  //border: 2px solid magenta;
   
   display: flex;
   flex-wrap: wrap;
