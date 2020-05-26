@@ -1,5 +1,6 @@
 #main-projects-container {
   width: 100%;
+  min-height: 900px;
   position: relative;
   margin-top: 10px;
   top: -70px;

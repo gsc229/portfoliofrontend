@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image, Segment, Header, List, Container, Grid} from 'semantic-ui-react'
+import {Image, Segment, Header, List, Container, Grid, Popup, Icon, Button} from 'semantic-ui-react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '../styles/css/project_view.css'
 
@@ -15,8 +15,10 @@ export default function ProjectView({projects, props}) {
 
 
   return (    
-    <Segment className='project-view-container'>      
+    <Segment className='project-view-container'>
+      <Button labelPosition='left' icon='left chevron' content='Back' onClick={()=>props.history.push('/')} color='green' />      
       <Header as='h1'>{title}</Header>
+      
       <List divided relaxed>
 
         {front_end_repo && 
@@ -37,15 +39,28 @@ export default function ProjectView({projects, props}) {
         }
         
         <List.Item>
-          <a href={website} style={{textDecoration: 'none'}}>
-            <FontAwesomeIcon size='lg' icon={fa_web_icon} />
-            &nbsp; Website</a>
+          <Popup
+            style={{backgroundColor: 'black', color: 'white'}}
+            basic
+            trigger={
+              <Icon as='a' className='pop-up-a'  href={website} style={{textDecoration: 'none'}}>
+              <FontAwesomeIcon size='lg' icon={fa_web_icon} />
+              &nbsp; Website</Icon>
+            }
+         >
+           <Popup.Content style={{textAlign: 'center'}} >
+            <FontAwesomeIcon style={{color: 'orange', margin: '3px auto', fontSize: '15px'}} icon={['fas', 'info-circle']} /><br/>
+           Please note that some apps are not full-scale procuction apps. After clicking this link, it may hang 10-15 seconds before the server<br/>"wakes up".
+           </Popup.Content>
+         </Popup>
+            
+          
         </List.Item>      
       </List>{/*END LINKS  */} 
 
 
       <Container className='info-container'>
-        <Grid columns={2} relaxed='very'>
+        <Grid stackable columns={2} relaxed='very'>
           <Grid.Column>
           <Image className='view-image' size='huge' src={top_photo} alt=""/>
           </Grid.Column>
