@@ -29,15 +29,15 @@ export default function TechLegend({tech}) {
             {tech === 'Sass' && <i className="devicon-sass-original colored skill-logo"></i> }     
             {tech === 'CSS 3' && <i className="devicon-css3-plain-wordmark colored skill-logo"></i> }
             {tech === 'Less' && <i className="devicon-less-plain-wordmark colored skill-logo"></i> }
-            {tech === 'HTML 5' && <i className="devicon-html5-plain-wordmark"></i> }
+            {tech === 'HTML 5' && <i className="devicon-html5-plain-wordmark skill-logo"></i> }
             {tech === 'Axios' && <i id="axios" className="skill-logo"><p>Axios HTTP API</p></i> }
             {tech === 'Cloudinary' && <img id="cloudinary" className="skill-logo" src={cloudinary} alt=""/> }
             {tech === 'React Router' && <img id="react-router" src={reactRtr} alt="" className="skill-logo"/> }
             {tech === 'Styled Components' && <img id="styled-components" src={styledC} className="skill-logo" alt=""/>}
-            {tech === 'Jinja' && <img id="jinja" alt="_images/jinja-logo.png" className="align-center" src={jinja}/> }
-            {tech === 'Semantic UI' && <img src={semUI} className="ui mini right spaced image" alt="" /> }
-            {tech === 'Material UI' &&  <img src={matUi} className="ui mini right spaced image" alt="" /> }
-            {tech === 'Materialize' &&  <img src={matZ} className="ui mini right spaced image" alt="" /> }
+            {tech === 'Jinja' && <img id="jinja" alt="_images/jinja-logo.png" className="align-center skill-logo" src={jinja}/> }
+            {tech === 'Semantic UI' && <img src={semUI} className="ui mini right spaced image skill-logo" alt="" /> }
+            {tech === 'Material UI' &&  <img src={matUi} className="ui mini right spaced image skill-logo" alt="" /> }
+            {tech === 'Materialize' &&  <img src={matZ} className="ui mini right spaced image skill-logo" alt="" /> }
             {tech === 'Digital Ocean' && <img id="digital-ocean" src={digO} className="skill-logo" alt=""/> }
     
         </div>
