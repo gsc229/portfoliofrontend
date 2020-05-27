@@ -5,7 +5,7 @@ const axiosWithAuth = () => {
   // deployed: https://quickstlabs.herokuapp.com/api/v1.0/
 
   
-  const url = 'http://localhost:8000'
+  const url = 'https://projectsdata.herokuapp.com'
 
   return axios.create({
     baseURL: `${url}`,
