@@ -7,6 +7,22 @@
   display: flex;
   justify-content: space-between;  
   background-color: #1B1C1D;
+  align-items: center;
+  h1{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    width: fit-content;
+    margin-right: 20px;
+    color: white;
+    position: relative;
+    align-self: flex-start;
+    cursor: pointer;
+
+    
+  }
+  
+
+
   .left-controls{
     display: flex;
     justify-content: space-between;
@@ -18,17 +34,18 @@
     display: flex;
     justify-content: space-between;
     width: fit-content;
+    
   }
 
-  h1{
-    font-family: 'Dancing Script', cursive;
-    font-weight: bolder;
-    width: fit-content;
-    margin-right: 20px;
-    color: white;
-    position: relative;
-    align-self: flex-start;
-    cursor: pointer;
+  @media screen and (max-width: '500px') {
+    h1{
+      font-size: 20px;
+    }
+    .button{
+      font-size: 10px;
+    }
   }
+
+  
 }
 

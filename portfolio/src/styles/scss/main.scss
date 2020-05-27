@@ -11,6 +11,9 @@
   top: -70px;
   height: 70px;
   margin: 0 auto;
+  @media screen and (max-width: '500px') {
+    top: -60px;
+  }
 }
 
 #side-bar{
@@ -39,6 +42,12 @@
     &:hover{
       color: yellow;
     }
+  }
+
+  @media screen and (max-width: '500px') {
+    
+    top: 50px;
+    
   }
 
 }

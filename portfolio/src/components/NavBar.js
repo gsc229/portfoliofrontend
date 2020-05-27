@@ -40,6 +40,7 @@ const NavBar = ({setVisible, visible, props}) => {
         <Button
           as={Link}
           to='top-banner'
+          
           smooth={true}
           offset={-50}
           duration={800}       
