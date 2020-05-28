@@ -55,9 +55,6 @@ function App() {
       {/* SIDEBAR */}
       <Route path='/' render={(props)=>
       <SideBar props={props} visible={visible} setVisible={setVisible}/> } />
-      
-           
-   
         <Sidebar.Pusher dimmed={visible} >
       
             {/* BANNER */}
@@ -81,7 +78,6 @@ function App() {
                 {/* CONTACT */}
                 <Route path='/contact' render={(props)=>
                 <Contact  props={props} />}/>
-              
             </Container>
                   
         </Sidebar.Pusher>

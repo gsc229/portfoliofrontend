@@ -20,7 +20,7 @@ const Projects = ({projects, props}) => {
      
     : (    
       
-      <Segment>        
+      <Segment id='spinner'>        
         <Dimmer active>
           <Loader inverted>Loading</Loader>
         </Dimmer>

@@ -25,6 +25,14 @@
   padding: 20px;
 }
 
+.all-projects-container #spinner {
+  min-height: 500px;
+}
+
+.all-projects-container .cards .card {
+  min-height: 300px;
+}
+
 .all-projects-container #project-cards-container {
   display: -webkit-box;
   display: -ms-flexbox;
