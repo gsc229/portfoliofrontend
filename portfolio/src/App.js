@@ -58,7 +58,9 @@ function App() {
         <Sidebar.Pusher dimmed={visible} >
       
             {/* BANNER */}
-            <TopBanner featured_projects={featured_projects} />
+            <Route path='/' render={(props)=> 
+              <TopBanner props={props} visible={visible} setVisible={setVisible} featured_projects={featured_projects} />
+            }/>
             {/*TOP MENU DUMMY DIV */}
             <div id='top-menu-scroll-to' ></div>            
 
