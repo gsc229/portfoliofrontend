@@ -62,7 +62,7 @@ function App() {
               <TopBanner props={props} visible={visible} setVisible={setVisible} featured_projects={featured_projects} />
             }/>
             {/*TOP MENU DUMMY DIV */}
-            <div id='top-menu-scroll-to' ></div>            
+            <div id='top-menu-scroll-to' ></div>         
 
             <Container id='main-projects-container'>
                 {/* TOP MENU */}
