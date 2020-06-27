@@ -6,9 +6,9 @@ import '../styles/css/banner.css'
 
 export default function FeaturedProjects({featured_projects, visible, setVisible, props}) {
   
-  const contactClick = (e)=>{
+  const contactClick = (target)=>{
     
-    props.history.push('/contact')
+    props.history.push(target)
     setVisible(false)
   }
   return (
@@ -20,8 +20,25 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
 						<h1>Hi. I'm <strong>Greg Cameron</strong>.</h1>
 					</Header>
           <p>
-          And this is my <a className="scrolly" href="#portfolio"><strong>Portfolio</strong></a>
+          And this is my &nbsp;
+          <strong>
+          <Item
+          className="scrolly" 
+          as={Link}
+          href="#"
+          to='top-menu-scroll-to'
+          smooth={true}              
+          duration={800}   
+          name='portfolio'
+          id='portfolio'
+          onClick={()=>contactClick('/')}>
+          Portfolio.
+          </Item> 
+          &nbsp;
+          &nbsp;
+          </strong>
           Feel free to take a look around.<br></br>
+          <strong>
           <Item
           className="scrolly" 
           as={Link}
@@ -31,9 +48,10 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
           duration={800}   
           name='contact'
           id='contact'
-          onClick={contactClick}>
+          onClick={()=>contactClick('/contact')}>
             Contact me 
-          </Item> 
+          </Item>       
+          </strong>
           &nbsp; if you have any questions!
           </p>          
         </div>
