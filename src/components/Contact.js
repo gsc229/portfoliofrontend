@@ -1,7 +1,5 @@
 import React from 'react';
-import axios from 'axios'
 import { Button, Form, Segment, Container, Header } from 'semantic-ui-react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '../styles/css/contact.css'
 
 export default function Contact() {

@@ -1,7 +1,5 @@
 import React from 'react'
 import {Dimmer, Loader, Image, Segment, Card} from 'semantic-ui-react'
-import {Link} from 'react-scroll'
-//import Project from './Project'
 import ProjectCard from './ProjectCard';
 
 import '../styles/css/projects.css'

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from './utils/axiosWithAuth'
-import {Route, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import {Sidebar, Segment, Container} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './styles/css/main.css'
