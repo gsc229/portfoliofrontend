@@ -1,5 +1,5 @@
 //import { useBooleanKnob } from '@stardust-ui/docs-components'
-import React, {useState} from 'react'
+import React from 'react'
 import {Menu, Sidebar} from 'semantic-ui-react'
 import {Link} from 'react-scroll'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
