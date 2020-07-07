@@ -20,7 +20,7 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
 						<h1>Hi. I'm <strong>Greg Cameron</strong>.</h1>
 					</Header>
           <p>
-          This is my &nbsp;
+          And this is my &nbsp;
           <strong>
           <Item
           className="scrolly" 
