@@ -72,28 +72,44 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
   { 
     key: 'all', 
     active: activeType === 'a', 
-    name: 'All', onClick: () => filter('a', activeTech), 
+    name: 'All', 
+    onClick: () => {
+      filter('a', '')
+      setActiveTech('')
+    }, 
     color: 'yellow', 
     style: {color: 'black'}
   },
   { 
     key: 'team-projects', 
     active: activeType === 't', 
-    name: 'Team Projects', onClick: () => filter('t', activeTech), 
+    name: 'Team Projects', 
+    onClick: () => {
+      filter('t', '')
+      setActiveTech('')
+    }, 
     color: 'purple' , 
     style: {color: 'black'}  
   },
   { 
     key: 'course-projects', 
     active: activeType === 'c', 
-    name: 'Course Projects', onClick: () => filter('c', activeTech),
+    name: 'Course Projects', 
+    onClick: () => {
+      filter('c', '')
+      setActiveTech('')
+    },
     color: 'blue' , 
     style: {color: 'black'} 
   },
   { 
     key: 'personal-projects', 
     active: activeType === 'p', 
-    name: 'Personal Projects', onClick: () => filter('p', activeTech),
+    name: 'Personal Projects', 
+    onClick: () => {
+      filter('p', '')
+      setActiveTech('')
+    },
     color: 'green' , 
     style: {color: 'black'} 
   }
