@@ -19,7 +19,7 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
     }
     setFiltered(filtered)
     setActiveType(type) 
-    props.history.push('/')
+    
   }
 
   const filter = () => {
