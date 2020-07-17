@@ -118,9 +118,13 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
   const fontSize = '40px'
  
   return (
-    <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-      <Menu id='top-menu' inverted items={types} />
-      <Menu stackable>
+    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+      <Menu 
+      id='top-menu' 
+      inverted items={types}
+      style={{maringTop: '20px'}} />
+
+      <Menu>
         <Menu.Item
           active={activeTech==='React'}
           onClick={()=> handleTechClick('React')}
