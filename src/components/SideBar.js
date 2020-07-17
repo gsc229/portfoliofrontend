@@ -5,12 +5,7 @@ import {Link} from 'react-scroll'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const SidebarExampleSidebar = ({visible, setVisible, props}) => {
-  
-  
 
-  
-  
-  
   const contactClick = (e)=>{
     
     props.history.push('/contact')
@@ -32,52 +27,51 @@ const SidebarExampleSidebar = ({visible, setVisible, props}) => {
         width='thin'
       > 
           
-            <Menu.Item 
-              as='a' 
-              name='resume'
-              id='resume'
-              
-              
-              href='https://resume.io/r/l8u6bawut' 
-              >
-                <FontAwesomeIcon  className='sidebar-icon'  icon={['far', 'file-pdf']} />&nbsp;
-                <br/><br/><p>Resume</p>
-            </Menu.Item >
+        <Menu.Item 
+          as='a' 
+          name='resume'
+          id='resume'
+          
+          
+          href='https://resume.io/r/l8u6bawut' 
+          >
+            <FontAwesomeIcon  className='sidebar-icon'  icon={['far', 'file-pdf']} />&nbsp;
+            <br/><br/><p>Resume</p>
+        </Menu.Item >
 
-            <Menu.Item 
-              as={Link}
-              to='top-menu-scroll-to'
-              smooth={true}              
-              duration={800}   
-              name='contact'
-              id='contact'
-              
-              onClick={contactClick}
-              >
-                <FontAwesomeIcon className='sidebar-icon' icon={['far', 'paper-plane']} />&nbsp;
-                <br/><br/><p>Contact</p>
-            </Menu.Item>
+        <Menu.Item 
+          as={Link}
+          to='top-menu-scroll-to'
+          smooth={true}              
+          duration={800}   
+          name='contact'
+          id='contact'
+          
+          onClick={contactClick}
+          >
+            <FontAwesomeIcon className='sidebar-icon' icon={['far', 'paper-plane']} />&nbsp;
+            <br/><br/><p>Contact</p>
+        </Menu.Item>
 
-            <Menu.Item 
-              as='a'
-              href='https://www.linkedin.com/in/greg-cameron-90488b30/' 
-              name='linked-in'
-              id='linked-in'
-              
-              
-              >
-                <FontAwesomeIcon className='sidebar-icon social'  icon={['fab', 'linkedin']} />
-            </Menu.Item>
+        <Menu.Item 
+          as='a'
+          href='https://www.linkedin.com/in/greg-cameron-90488b30/' 
+          name='linked-in'
+          id='linked-in'
+          
+          
+          >
+            <FontAwesomeIcon className='sidebar-icon social'  icon={['fab', 'linkedin']} />
+        </Menu.Item>
 
-            <Menu.Item 
-              as='a'
-              href='https://github.com/gsc229' 
-              name='git-hub'
-              id='git-hub'
-              >
-                <FontAwesomeIcon className='sidebar-icon social'  icon={['fab', 'github-square']} />
-            </Menu.Item>
-
+        <Menu.Item 
+          as='a'
+          href='https://github.com/gsc229' 
+          name='git-hub'
+          id='git-hub'
+          >
+            <FontAwesomeIcon className='sidebar-icon social'  icon={['fab', 'github-square']} />
+        </Menu.Item>
        </Sidebar>
       
   )

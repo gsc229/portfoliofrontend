@@ -1,25 +1,23 @@
 import React, {useState} from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Divider } from 'semantic-ui-react'
 
 
 
 const TopMenu = ({setFiltered, filtered, projects, props}) => {
 
-  const [activeItem, setActiveItem] = useState('a')
+  const [activeType, setActiveType] = useState('a')
   
 
-  
-
-  const cycleTo = (value) => {
+  const filter = (project_type, language=null) => {
     
-    const key = {
+    const type_key = {
       'a': 'all',
       'f': 'featured',
       't':'Team Project',
       'c':'Course Project',
       'p':'Personal Day Project'
     }
-    const type = key[value]
+    const type = type_key[project_type]
     
     
     if(type==='all'){      
@@ -27,25 +25,34 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
     } else if(type === 'featured'){
       filtered = projects.filter(project=>project.featured)
     } else{
-      filtered = projects ? projects.filter(project=>project.project_type===type) : ''
+      setFiltered(projects.filter(project=>project.project_type===type))
     }
 
-    setActiveItem(value)
-    
+    if(language){}
+
+    setActiveType(project_type)    
     setFiltered(filtered)
      
     props.history.push('/')
   }
 
-  const items = [
-    { key: 'all', active: activeItem === 'a', name: 'All', onClick: () => cycleTo('a'), color: 'yellow', style: {color: 'black'}},
-    { key: 'team-projects', active: activeItem === 't', name: 'Team Projects', onClick: () => cycleTo('t'), color: 'purple' , style: {color: 'black'}  },
-    { key: 'course-projects', active: activeItem === 'c', name: 'Course Projects', onClick: () => cycleTo('c'),color: 'blue' , style: {color: 'black'} },
-    { key: 'personal-projects', active: activeItem === 'p', name: 'Personal Projects', onClick: () => cycleTo('p'),color: 'green' , style: {color: 'black'} }
+  const types= [
+    { key: 'all', active: activeType === 'a', name: 'All', onClick: () => filter('a'), color: 'yellow', style: {color: 'black'}},
+    { key: 'team-projects', active: activeType === 't', name: 'Team Projects', onClick: () => filter('t'), color: 'purple' , style: {color: 'black'}  },
+    { key: 'course-projects', active: activeType === 'c', name: 'Course Projects', onClick: () => filter('c'),color: 'blue' , style: {color: 'black'} },
+    { key: 'personal-projects', active: activeType === 'p', name: 'Personal Projects', onClick: () => filter('p'),color: 'green' , style: {color: 'black'} }
+  ]
+
+  const technologies = [
+
   ]
   
    
-  return (<Menu id='top-menu' inverted items={items} />)
+  return (
+    <div>
+      <Menu id='top-menu' inverted items={types} />
+    </div>
+  )
 
 }
 

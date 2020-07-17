@@ -7,7 +7,7 @@ import '../styles/css/projects.css'
 const Projects = ({projects, props}) => {
 
   return (
-    <div class='all-projects-container'>    
+    <div className='all-projects-container'>    
       {projects ? 
       
       <Card.Group centered>      

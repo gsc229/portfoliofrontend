@@ -65,9 +65,9 @@ export default function ProjectView({projects, props}) {
           <Image className='view-image' size='huge' src={top_photo} alt=""/>
           </Grid.Column>
           <Grid.Column>
-            {description && <p><h3>About: </h3>{description}</p>}
-            {roles && <p><h3>Roles: </h3>{roles}</p>}
-            {responsibilities && <p><h3>Responsibilities: </h3>{responsibilities}</p>}
+            {description && <div style={{margin: '20px 0'}}><h3>About: </h3><p style={{paddingRight: '20px'}}>{description}</p></div>}
+            {roles && <div style={{margin: '20px 0'}}><h3>Roles: </h3><p style={{paddingRight: '20px'}}>{roles}</p></div>}
+            {responsibilities && <div style={{margin: '20px 0'}}><h3>Responsibilities: </h3><p style={{paddingRight: '20px'}}>{responsibilities}</p></div>}
             <h3>Technologies: </h3>
 
             <div id='tech-container'>
