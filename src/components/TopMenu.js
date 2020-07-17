@@ -1,56 +1,89 @@
 import React, {useState} from 'react'
-import { Menu, Divider } from 'semantic-ui-react'
-
+import { Menu, Divider, ItemMeta } from 'semantic-ui-react'
+import TechIcon from './TechLegend'
 
 
 const TopMenu = ({setFiltered, filtered, projects, props}) => {
 
-  const [activeType, setActiveType] = useState('a')
-  
+  const [activeType, setActiveType] = useState('all')
+  const [activeTech, setActiveTech] = useState("")
 
-  const filter = (project_type, language=null) => {
-    
-    const type_key = {
-      'a': 'all',
-      'f': 'featured',
-      't':'Team Project',
-      'c':'Course Project',
-      'p':'Personal Day Project'
-    }
-    const type = type_key[project_type]
-    
-    
-    if(type==='all'){      
+
+  const handleTypeClick = (type)=>{
+    if(activeType==='all'){      
       filtered = projects
-    } else if(type === 'featured'){
+    } else if(activeType === 'featured'){
       filtered = projects.filter(project=>project.featured)
     } else{
-      setFiltered(projects.filter(project=>project.project_type===type))
+      filtered = projects ? projects.filter(project=>project.project_type===activeType) : ''
     }
-
-    if(language){}
-
-    setActiveType(project_type)    
     setFiltered(filtered)
+    setActiveType(type) 
+    props.history.push('/')
+  }
+
+  const filter = () => {
+    
+    
+
+    
+    const filteredByTech = []
+    filtered.map(item=>{
+      if(activeTech === 'React'){
+        if(item.technologies.indexOf('React with hooks') !== -1 || item.technologies.indexOf('React with classes') !== -1){
+          filteredByTech.push(item)
+        }
+      }
+
+      if(activeTech ==='Django'){
+        if(item.technologies.indexOf){}
+      }
+    })
+    
+
+       
+    
      
     props.history.push('/')
   }
 
-  const types= [
-    { key: 'all', active: activeType === 'a', name: 'All', onClick: () => filter('a'), color: 'yellow', style: {color: 'black'}},
-    { key: 'team-projects', active: activeType === 't', name: 'Team Projects', onClick: () => filter('t'), color: 'purple' , style: {color: 'black'}  },
-    { key: 'course-projects', active: activeType === 'c', name: 'Course Projects', onClick: () => filter('c'),color: 'blue' , style: {color: 'black'} },
-    { key: 'personal-projects', active: activeType === 'p', name: 'Personal Projects', onClick: () => filter('p'),color: 'green' , style: {color: 'black'} }
-  ]
-
-  const technologies = [
-
-  ]
+  const handleTechClick = (tech) => {
+    if(tech === activeTech){
+      setActiveTech("")
+    } else{
+      setActiveTech(tech)
+    }
+    
+    
+  }
   
-   
+  const types= [
+    { key: 'all', active: activeType === 'all', name: 'All', onClick: () => handleTypeClick('all'), color: 'yellow', style: {color: 'black'}},
+    { key: 'team-projects', active: activeType === 'Team Project', name: 'Team Projects', onClick: () => handleTypeClick('Team Project'), color: 'purple' , style: {color: 'black'}  },
+    { key: 'course-projects', active: activeType === 'Course Project', name: 'Course Projects', onClick: () => handleTypeClick('Course Project'),color: 'blue' , style: {color: 'black'} },
+    { key: 'personal-projects', active: activeType === 'Personal Day Project', name: 'Personal Projects', onClick: () => handleTypeClick('Personal Day Project'),color: 'green' , style: {color: 'black'} }
+  ]
+
+  const fontSize = '40px'
+ 
   return (
-    <div>
+    <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
       <Menu id='top-menu' inverted items={types} />
+      <Menu stackable>
+        <Menu.Item
+          active={activeTech==='React'}
+          onClick={()=> handleTechClick('React')}
+          style={{hover: 'black'}}
+        >
+          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer'}} id="react" className="devicon-react-original-wordmark colored skill-logo"></i>
+        </Menu.Item>
+        <Menu.Item
+          active={activeTech==='Django'}
+          onClick={()=> handleTechClick('Django')}
+        >
+          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer'}} id="django" className="devicon-django-plain-wordmark skill-logo"></i>
+        </Menu.Item>
+      </Menu>
     </div>
   )
 

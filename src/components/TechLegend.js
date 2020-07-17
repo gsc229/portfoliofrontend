@@ -18,12 +18,12 @@ export default function TechLegend({tech}) {
             {tech === 'Postgres' && <i id="postgres" className="devicon-postgresql-plain-wordmark colored skill-logo"></i> }
             {tech === 'Bootstrap' && <i className="devicon-bootstrap-plain-wordmark colored skill-logo"></i> }
             {tech === 'Heroku' && <i className="devicon-heroku-plain-wordmark colored skill-logo"></i> }
-            {tech === 'Amazon Web Services' && <i className="devicon-amazonwebservices-plain-wordmark colored skill-logo"></i> }
-            
+            {tech === 'Amazon Web Services' && <i className="devicon-amazonwebservices-plain-wordmark colored skill-logo"></i> }            
             {tech === 'Node' && <i id="node" className="devicon-nodejs-plain-wordmark skill-logo"></i> }
             {tech === 'Express' && <i className="devicon-express-original-wordmark skill-logo"></i> }
             {tech === 'MongoDB' && <i className="devicon-mongodb-plain-wordmark colored skill-logo"></i>}
             {tech === 'Mongoose' && <div id="mongoose" className="mongoose skill-logo">Mongoose</div> }
+            {tech === 'React' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"></i> }
             {tech === 'React with hooks' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"><p>+ Hooks</p></i> }
             {tech === 'React with classNamees' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"><p>(classes)</p></i> }
             {tech === 'Sass' && <i className="devicon-sass-original colored skill-logo"></i> }     
