@@ -7,9 +7,6 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
 
   const [activeItem, setActiveItem] = useState('a')
   
-
-  
-
   const cycleTo = (value) => {
     
     const key = {
