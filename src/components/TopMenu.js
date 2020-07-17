@@ -5,63 +5,98 @@ import TechIcon from './TechLegend'
 
 const TopMenu = ({setFiltered, filtered, projects, props}) => {
 
-  const [activeType, setActiveType] = useState('all')
+  const [activeType, setActiveType] = useState('a')
   const [activeTech, setActiveTech] = useState("")
 
-
-  const handleTypeClick = (type)=>{
-    if(activeType==='all'){      
+  const filter = (project_type, active_tech) => {
+    
+    const type_key = {
+      'a': 'all',
+      'f': 'featured',
+      't':'Team Project',
+      'c':'Course Project',
+      'p':'Personal Day Project'
+    }
+    const type = type_key[project_type]
+    
+    
+    if(type==='all'){      
       filtered = projects
-    } else if(activeType === 'featured'){
+    } else if(type === 'featured'){
       filtered = projects.filter(project=>project.featured)
     } else{
-      filtered = projects ? projects.filter(project=>project.project_type===activeType) : ''
+      filtered = projects ? projects.filter(project=>project.project_type===type) : ''
     }
-    setFiltered(filtered)
-    setActiveType(type) 
-    
-  }
 
-  const filter = () => {
-    
-    
-
-    
     const filteredByTech = []
-    filtered.map(item=>{
-      if(activeTech === 'React'){
+    
+   if(active_tech){     
+    {filtered && filtered.map(item=>{
+      if(active_tech === 'React'){
+        console.log('filter active_tech: ', active_tech)
         if(item.technologies.indexOf('React with hooks') !== -1 || item.technologies.indexOf('React with classes') !== -1){
           filteredByTech.push(item)
         }
       }
 
-      if(activeTech ==='Django'){
-        if(item.technologies.indexOf){}
+      if(active_tech ==='Django'){
+        console.log('filter active_tech: ', active_tech)
+        if(item.technologies.indexOf('Django') !== -1){
+          filteredByTech.push(item)
+        }
       }
-    })
-    
+    })}
 
-       
+    if(!filteredByTech.length){
+      filtered = []
+    }
+  }
+
+    setActiveType(project_type)    
+    setFiltered(filteredByTech.length ? filteredByTech : filtered)
     
-     
-    props.history.push('/')
+    //props.history.push('/')
   }
 
   const handleTechClick = (tech) => {
     if(tech === activeTech){
       setActiveTech("")
+      filter(activeType, null)
     } else{
       setActiveTech(tech)
+      filter(activeType, tech)
     }
-    
-    
   }
   
   const types= [
-    { key: 'all', active: activeType === 'all', name: 'All', onClick: () => handleTypeClick('all'), color: 'yellow', style: {color: 'black'}},
-    { key: 'team-projects', active: activeType === 'Team Project', name: 'Team Projects', onClick: () => handleTypeClick('Team Project'), color: 'purple' , style: {color: 'black'}  },
-    { key: 'course-projects', active: activeType === 'Course Project', name: 'Course Projects', onClick: () => handleTypeClick('Course Project'),color: 'blue' , style: {color: 'black'} },
-    { key: 'personal-projects', active: activeType === 'Personal Day Project', name: 'Personal Projects', onClick: () => handleTypeClick('Personal Day Project'),color: 'green' , style: {color: 'black'} }
+  { 
+    key: 'all', 
+    active: activeType === 'a', 
+    name: 'All', onClick: () => filter('a', activeTech), 
+    color: 'yellow', 
+    style: {color: 'black'}
+  },
+  { 
+    key: 'team-projects', 
+    active: activeType === 't', 
+    name: 'Team Projects', onClick: () => filter('t', activeTech), 
+    color: 'purple' , 
+    style: {color: 'black'}  
+  },
+  { 
+    key: 'course-projects', 
+    active: activeType === 'c', 
+    name: 'Course Projects', onClick: () => filter('c', activeTech),
+    color: 'blue' , 
+    style: {color: 'black'} 
+  },
+  { 
+    key: 'personal-projects', 
+    active: activeType === 'p', 
+    name: 'Personal Projects', onClick: () => filter('p', activeTech),
+    color: 'green' , 
+    style: {color: 'black'} 
+  }
   ]
 
   const fontSize = '40px'
@@ -73,15 +108,17 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
         <Menu.Item
           active={activeTech==='React'}
           onClick={()=> handleTechClick('React')}
-          style={{hover: 'black'}}
+          
+          style={{backgroundColor: activeTech==='React' ? '#61DAFB' : 'white'}}
         >
-          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer'}} id="react" className="devicon-react-original-wordmark colored skill-logo"></i>
+          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer', color: activeTech === 'React' ? 'white' : ''}} id="react" className="devicon-react-original-wordmark colored skill-logo"></i>
         </Menu.Item>
         <Menu.Item
           active={activeTech==='Django'}
           onClick={()=> handleTechClick('Django')}
+          style={{backgroundColor: activeTech==='Django' ? '#0EA44B' : 'white'}}
         >
-          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer'}} id="django" className="devicon-django-plain-wordmark skill-logo"></i>
+          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer', color: activeTech === 'Django' ? 'white' : '#0EA44B' }} id="django" className="devicon-django-plain-wordmark skill-logo"></i>
         </Menu.Item>
       </Menu>
     </div>
