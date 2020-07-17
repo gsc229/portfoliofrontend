@@ -7,7 +7,6 @@ import '../styles/css/banner.css'
 export default function FeaturedProjects({featured_projects, visible, setVisible, props}) {
   
   const contactClick = (target)=>{
-    
     props.history.push(target)
     setVisible(false)
   }
@@ -15,7 +14,7 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
     <Advertisement id="top-banner" unit='billboard'>
       <Container id='banner-inner-container'>        
         <Image src={profilePic} circular size='medium' centered />
-        <div id='banner-inner-right' centered>
+        <div id='banner-inner-right' centered='true'>
           <Header size='huge'>
 						<h1>Hi. I'm <strong>Greg Cameron</strong>.</h1>
 					</Header>

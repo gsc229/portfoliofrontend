@@ -66,8 +66,8 @@ function App() {
 
             <Container id='main-projects-container'>
                 {/* TOP MENU */}
-                <Route exact path='/' render={(props)=>
-                <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>
+                {filtered && <Route exact path='/' render={(props)=>
+                <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>}
         
                 {/* PROJECTS */}
                 <Route exact path='/' render={(props)=> 
