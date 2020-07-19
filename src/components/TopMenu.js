@@ -8,32 +8,11 @@ const TopMenu = ({setFiltered, filtered, projects}) => {
   const [activeType, setActiveType] = useState('a')
   const [activeTech, setActiveTech] = useState("")
 
-<<<<<<< HEAD
-  const [activeItem, setActiveItem] = useState('a')
-  
-  const cycleTo = (value) => {
-    
-    const key = {
-      'a': 'all',
-      'f': 'featured',
-      't':'Team Project',
-      'c':'Course Project',
-      'p':'Personal Day Project'
-    }
-    const type = key[value]
-    
-    
-    if(type==='all'){      
-      filtered = projects
-    } else if(type === 'featured'){
-      filtered = projects.filter(project=>project.featured)
-=======
  
   const handleTechClick = (tech) => {
     if(tech === activeTech){
       setActiveTech("")
       filter(activeType, null, setActiveType, setFiltered, filtered, projects)
->>>>>>> d4eea19d954c35f40007f3c0d9c945336c420523
     } else{
       setActiveTech(tech)
       filter(activeType, tech, setActiveType, setFiltered, filtered, projects)
