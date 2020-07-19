@@ -1,10 +1,14 @@
 import React, {useState} from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Divider, ItemMeta } from 'semantic-ui-react'
+import {filter} from './menuHelpers' // filters based on type of project and type of tech selected (react or django)
 
 
+const TopMenu = ({setFiltered, filtered, projects}) => {
 
-const TopMenu = ({setFiltered, filtered, projects, props}) => {
+  const [activeType, setActiveType] = useState('a')
+  const [activeTech, setActiveTech] = useState("")
 
+<<<<<<< HEAD
   const [activeItem, setActiveItem] = useState('a')
   
   const cycleTo = (value) => {
@@ -23,26 +27,87 @@ const TopMenu = ({setFiltered, filtered, projects, props}) => {
       filtered = projects
     } else if(type === 'featured'){
       filtered = projects.filter(project=>project.featured)
+=======
+ 
+  const handleTechClick = (tech) => {
+    if(tech === activeTech){
+      setActiveTech("")
+      filter(activeType, null, setActiveType, setFiltered, filtered, projects)
+>>>>>>> d4eea19d954c35f40007f3c0d9c945336c420523
     } else{
-      filtered = projects ? projects.filter(project=>project.project_type===type) : ''
+      setActiveTech(tech)
+      filter(activeType, tech, setActiveType, setFiltered, filtered, projects)
     }
-
-    setActiveItem(value)
-    
-    setFiltered(filtered)
-     
-    props.history.push('/')
   }
 
-  const items = [
-    { key: 'all', active: activeItem === 'a', name: 'All', onClick: () => cycleTo('a'), color: 'yellow', style: {color: 'black'}},
-    { key: 'team-projects', active: activeItem === 't', name: 'Team Projects', onClick: () => cycleTo('t'), color: 'purple' , style: {color: 'black'}  },
-    { key: 'course-projects', active: activeItem === 'c', name: 'Course Projects', onClick: () => cycleTo('c'),color: 'blue' , style: {color: 'black'} },
-    { key: 'personal-projects', active: activeItem === 'p', name: 'Personal Projects', onClick: () => cycleTo('p'),color: 'green' , style: {color: 'black'} }
-  ]
+ const handleTypeClick = (type) => {
+   filter(type, '', setActiveType, setFiltered, filtered, projects)
+   setActiveTech('')
+ }
   
-   
-  return (<Menu id='top-menu' inverted items={items} />)
+  const types= [
+  { 
+    key: 'all', 
+    active: activeType === 'a', 
+    name: 'All', 
+    onClick: () => {handleTypeClick('a')}, 
+    color: 'yellow', 
+    style: {color: 'black'}
+  },
+  { 
+    key: 'team-projects', 
+    active: activeType === 't', 
+    name: 'Team Projects', 
+    onClick: () => {handleTypeClick('t')}, 
+    color: 'purple' , 
+    style: {color: 'black'}  
+  },
+  { 
+    key: 'course-projects', 
+    active: activeType === 'c', 
+    name: 'Course Projects', 
+    onClick: () => {handleTypeClick('c') },
+    color: 'blue' , 
+    style: {color: 'black'} 
+  },
+  { 
+    key: 'personal-projects', 
+    active: activeType === 'p', 
+    name: 'Personal Projects', 
+    onClick: () => {handleTypeClick('p') },
+    color: 'green' , 
+    style: {color: 'black'} 
+  }
+  ]
+ 
+  const fontSize = '40px'
+ 
+  return (
+    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+      <Menu 
+      id='top-menu' 
+      inverted items={types}
+      style={{maringTop: '20px'}} />
+
+      <Menu>
+        <Menu.Item
+          active={activeTech==='React'}
+          onClick={()=> handleTechClick('React')}
+          
+          style={{backgroundColor: activeTech==='React' ? '#61DAFB' : 'white'}}
+        >
+          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer', color: activeTech === 'React' ? 'white' : ''}} id="react" className="devicon-react-original-wordmark colored skill-logo"></i>
+        </Menu.Item>
+        <Menu.Item
+          active={activeTech==='Django'}
+          onClick={()=> handleTechClick('Django')}
+          style={{backgroundColor: activeTech==='Django' ? '#0EA44B' : 'white'}}
+        >
+          <i style={{fontSize: fontSize, margin: 'auto', cursor: 'pointer', color: activeTech === 'Django' ? 'white' : '#0EA44B' }} id="django" className="devicon-django-plain-wordmark skill-logo"></i>
+        </Menu.Item>
+      </Menu>
+    </div>
+  )
 
 }
 

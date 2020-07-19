@@ -8,13 +8,11 @@ import '../styles/css/navbar.css'
 const NavBar = ({setVisible, visible, props}) => {
 
   const openSideBar = ()=>{
-    
-    
     setVisible(true)
   }
   
   return (
-    <div fixed inverted id='nav-bar' className='nav-bar'>
+    <div id='nav-bar' className='nav-bar'>
       <div className='left-controls'>
         <Link 
         to='top-banner'

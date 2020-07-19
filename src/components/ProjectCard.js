@@ -20,22 +20,17 @@ export default function ProjectCard({project, props}) {
   } */
   
   return (
-    
-          
         <Card 
           to='top-menu-scroll-to'
           smooth={true}
           duration={1000} 
-          as={Link}  onClick={()=>props.history.push(`/project/${project.id}`)} color={colors[project_type]} extra={website}>
+          as={Link}  onClick={()=>props.history.push(`/project/${project.id}`)} color={colors[project_type]}>
           <Image src={top_photo} />
           <Card.Content>
             <Card.Header>{title}</Card.Header>
-    
           </Card.Content>
-          <Card.Content extra>
-            <a href='/'>
-              <p>{project_type}</p>
-            </a>
+          <Card.Content>
+            <p>{project_type}</p>
           </Card.Content>
         </Card>
           
