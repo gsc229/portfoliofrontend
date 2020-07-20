@@ -33,7 +33,7 @@ export default function ProjectView({projects, props}) {
         {back_end_repo && 
         <List.Item>
           <a href={back_end_repo} style={{textDecoration: 'none'}}>  
-            <FontAwesomeIcon size='lg' icon={['fab', 'github']} />&nbsp;Front End Repo
+            <FontAwesomeIcon size='lg' icon={['fab', 'github']} />&nbsp;Back End Repo
           </a>
         </List.Item>
         }

@@ -8,7 +8,7 @@ const TopMenu = ({setFiltered, filtered, projects}) => {
   const [activeType, setActiveType] = useState('a')
   const [activeTech, setActiveTech] = useState("")
 
- 
+  
   const handleTechClick = (tech) => {
     if(tech === activeTech){
       setActiveTech("")
