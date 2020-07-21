@@ -9,6 +9,7 @@ import './styles/css/main.css'
 import NavBar from './components/NavBar'
 import TopMenu from './components/TopMenu'
 import SideBar from './components/SideBar'
+import FeaturedProject from './components/FeaturedProject'
 import Projects from './components/Projects'
 import ProjectView from './components/ProjectView'
 import TopBanner from './components/TopBanner'
@@ -27,8 +28,8 @@ function App() {
   const [projects, setProjects] = useState()
   const [filtered, setFiltered] = useState()
   const [reFetch, callRefetch] = useState(false)
-  const featured_projects = projects ? projects.filter(proj=> proj.featured) : ""
-
+  const featured_project = projects ? projects.filter(proj=> proj.featured)[0] : ""
+  console.log('featured_project: ', featured_project)
 
   // fetch data
   useEffect(() => {
@@ -59,11 +60,21 @@ function App() {
       
             {/* BANNER */}
             <Route path='/' render={(props)=> 
-              <TopBanner props={props} visible={visible} setVisible={setVisible} featured_projects={featured_projects} />
+              <TopBanner props={props} visible={visible} setVisible={setVisible} />
             }/>
+
+
+            {/* FEATURED SECTON */}
+            {featured_project &&
+            <Container id='current-project-container' style={{margin: '30px 0'}}>
+              <h2>Here's what I'm working on currently:</h2>
+              <FeaturedProject featuredProject={featured_project} />
+            </Container>}
+
+
+
             {/*TOP MENU DUMMY DIV */}
             <div id='top-menu-scroll-to' ></div>         
-
             <Container id='main-projects-container'>
                 {/* TOP MENU */}
                 {filtered && <Route exact path='/' render={(props)=>
