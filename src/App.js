@@ -66,7 +66,7 @@ function App() {
 
             {/* FEATURED SECTON */}
 
-            {featured_projects &&
+            {featured_projects.length &&
 
             <Container className='container fluid' id='current-project-container' style={{margin: '30px 0', border: '3px solid blue'}}>
               <h2>Here's what I'm working on currently:</h2>
