@@ -17,9 +17,9 @@ const FeaturedProject = ({featuredProject}) => {
   const fa_web_icon = web_icon ? [web_icon.slice(0,3), web_icon.slice(7, web_icon.length)] : ""
 
   return (
-    <Segment className='project-view-container'>
+    <div style={{display: 'flex', flexDirection: 'column'}}>
           
-      <Header as='h1'>{title}</Header>
+      <Header as='h3'>{title}</Header>
       
       <List divided relaxed>
 
@@ -76,7 +76,7 @@ const FeaturedProject = ({featuredProject}) => {
             {technologies &&               
               technologies.map(tech=>(
                                
-                  <TechLegend key={project.id} tech={tech} />
+                <TechLegend key={project.id} tech={tech} />
                 
               ))
             }
@@ -86,7 +86,7 @@ const FeaturedProject = ({featuredProject}) => {
           </Grid.Column>
         </Grid>        
       </Container>
-    </Segment>
+    </div>
   )
 }
 

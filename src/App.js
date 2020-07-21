@@ -28,8 +28,8 @@ function App() {
   const [projects, setProjects] = useState()
   const [filtered, setFiltered] = useState()
   const [reFetch, callRefetch] = useState(false)
-  const featured_project = projects ? projects.filter(proj=> proj.featured)[0] : ""
-  console.log('featured_project: ', featured_project)
+  const featured_projects = projects ? projects.filter(proj=> proj.featured) : ""
+  console.log('featured_project: ', featured_projects)
 
   // fetch data
   useEffect(() => {
@@ -65,11 +65,24 @@ function App() {
 
 
             {/* FEATURED SECTON */}
-            {featured_project &&
-            <Container id='current-project-container' style={{margin: '30px 0'}}>
+
+            {featured_projects &&
+
+            <Container className='container fluid' id='current-project-container' style={{margin: '30px 0', border: '3px solid blue'}}>
               <h2>Here's what I'm working on currently:</h2>
-              <FeaturedProject featuredProject={featured_project} />
-            </Container>}
+
+              <div className='ui relaxed grid' style={{border: '2px solid red'}}>                
+                  {featured_projects.map(project=>(
+                    <div className="eight wide column" style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <FeaturedProject featuredProject={project} />
+                    </div>
+                  ))}
+                
+              </div>
+              
+            </Container>
+            
+            }
 
 
 
