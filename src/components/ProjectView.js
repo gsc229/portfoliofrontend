@@ -62,7 +62,21 @@ export default function ProjectView({projects, props, featured=false}) {
       <Container className='info-container'>
         <Grid stackable columns={2} relaxed='very'>
           <Grid.Column>
-          <Image className='view-image' size='huge' src={top_photo} alt=""/>
+          <Popup
+            style={{backgroundColor: 'black', color: 'white'}}
+            basic
+            trigger={
+              <Image href={website} className='view-image' size='huge' src={top_photo} alt=""/>
+            }
+         >
+           <Popup.Content style={{textAlign: 'center'}} >
+            <FontAwesomeIcon style={{color: 'orange', margin: '3px auto', fontSize: '15px'}} icon={['fas', 'info-circle']} /><br/>
+           Please note that some apps are not full-scale procuction apps. After clicking this link, it may hang 10-15 seconds before the server<br/>"wakes up".
+           </Popup.Content>
+         </Popup>
+          
+          
+          
           </Grid.Column>
           <Grid.Column>
             {description && <div style={{margin: '20px 0'}}><h3>About: </h3><p style={{paddingRight: '20px'}}>{description}</p></div>}
