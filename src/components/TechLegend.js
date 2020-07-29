@@ -28,6 +28,7 @@ export default function TechLegend({tech}) {
             {tech === 'React with classNamees' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"><p>(classes)</p></i> }
             {tech === 'Sass' && <i className="devicon-sass-original colored skill-logo"></i> }     
             {tech === 'CSS 3' && <i className="devicon-css3-plain-wordmark colored skill-logo"></i> }
+            {tech === 'JavaScript' && <i className="devicon-javascript-plain colored skill-logo"></i> }
             {tech === 'Less' && <i className="devicon-less-plain-wordmark colored skill-logo"></i> }
             {tech === 'HTML 5' && <i className="devicon-html5-plain-wordmark skill-logo"></i> }
             {tech === 'Axios' && <i id="axios" className="skill-logo"><p>Axios HTTP API</p></i> }
