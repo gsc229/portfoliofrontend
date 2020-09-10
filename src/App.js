@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from './utils/axiosWithAuth'
 import {Route} from 'react-router-dom'
-import {Sidebar, Segment, Container} from 'semantic-ui-react'
+import {Sidebar, Segment, Container, Item} from 'semantic-ui-react'
+import {Link} from 'react-scroll'
 import 'semantic-ui-css/semantic.min.css'
-import './styles/css/main.css'
-
-
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {fab} from '@fortawesome/free-brands-svg-icons'
+import {far} from '@fortawesome/free-regular-svg-icons'
+import {fas} from '@fortawesome/free-solid-svg-icons'
 import NavBar from './components/NavBar'
 import TopMenu from './components/TopMenu'
 import SideBar from './components/SideBar'
@@ -14,11 +16,8 @@ import Projects from './components/Projects'
 import ProjectView from './components/ProjectView'
 import TopBanner from './components/TopBanner'
 import Contact from './components/Contact'
-
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {fab} from '@fortawesome/free-brands-svg-icons'
-import {far} from '@fortawesome/free-regular-svg-icons'
-import {fas} from '@fortawesome/free-solid-svg-icons'
+import './styles/css/main.css'
+import './styles/css/current_project.css'
 // add all off the fontawesome categories to the library
 library.add(fab, far, fas)
 
@@ -68,20 +67,28 @@ function App() {
 
             {featured_projects.length > 0 &&
 
-            <Container className='container fluid' id='current-project-container' style={{margin: '30px 0', border: '3px solid blue'}}>
-              <h2>Here's what I'm working on currently:</h2>
-
-              <div className='ui relaxed grid' style={{border: '2px solid red'}}>                
-                  {featured_projects.map(project=>(
-                    <div className="eight wide column" style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <FeaturedProject featuredProject={project} />
-                    </div>
-                  ))}
-                
+            <Container className='container fluid' id='featured-project-container' >
+              <div className='featured-project-header'>
+                <h2>Check out what I'm working on now:</h2>
+                <strong>
+                  <Item
+                  className="scrolly" 
+                  as={Link}
+                  href="#"
+                  to='top-menu-scroll-to'
+                  smooth={true}              
+                  duration={800}   
+                  name='portfolio'
+                  id='portfolio'>
+                  See full portfolio
+                  </Item> 
+                </strong>
               </div>
+                    
+                {/* <FeaturedProject featuredProject={project} /> */}
+                <ProjectView projects={projects}  featured={true} />
               
-            </Container>
-            }
+            </Container>}
 
 
 

@@ -17,7 +17,7 @@ const FeaturedProject = ({featuredProject}) => {
   const fa_web_icon = web_icon ? [web_icon.slice(0,3), web_icon.slice(7, web_icon.length)] : ""
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column'}}>
+    <div className='featured-project-container'>
           
       <Header as='h3'>{title}</Header>
       
@@ -78,8 +78,7 @@ const FeaturedProject = ({featuredProject}) => {
                                
                 <TechLegend key={project.id} tech={tech} />
                 
-              ))
-            }
+              ))}
            
             </div>
             

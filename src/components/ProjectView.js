@@ -8,15 +8,31 @@ import TechLegend from './TechLegend'
 
 
 export default function ProjectView({projects, props, featured=false}) {  
-  const project = projects ? projects.filter(project=> project.id.toString() === props.match.params.id)[0] : "Wait for it, wait for it..."
-  const {back_end_repo, website, web_icon, top_photo, description, front_end_repo, responsibilities, roles, technologies, title} = project
+  let project
+  console.log({projects})
+  if(featured){
+    project = projects.find(project=> project.featured)
+  }
+  else if(projects){
+    project = projects.filter(project=> project.id.toString() === props.match.params.id)[0]
+  } else project = "Wait for it, wait for it..."
+  
+  const {back_end_repo, website, web_icon, top_photo, description, front_end_repo, responsibilities, roles, technologies, title} = {...project}
+  
   const fa_web_icon = web_icon ? [web_icon.slice(0,3), web_icon.slice(7, web_icon.length)] : ""
   
 
 
   return (    
     <Segment className='project-view-container'>
-      <Button labelPosition='left' icon='left chevron' content='Back' onClick={()=>props.history.push('/')} color='green' />      
+      {!featured && 
+      <Button 
+      labelPosition='left' 
+      icon='left chevron' 
+      content='Back' 
+      onClick={()=>props.history.push('/')} 
+      color='green' 
+      /> }     
       <Header as='h1'>{title}</Header>
       
       <List divided relaxed>

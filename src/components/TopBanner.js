@@ -13,46 +13,48 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
   return (
     <Advertisement id="top-banner" unit='billboard'>
       <Container id='banner-inner-container'>        
-        <Image src={profilePic} circular size='medium' centered />
+        {/* <Image src={profilePic} circular size='medium' centered /> */}
         <div id='banner-inner-right' centered='true'>
-          <Header size='huge'>
-						<h1>Hi. I'm <strong>Greg Cameron</strong>.</h1>
-					</Header>
-          <p>
-          And this is my &nbsp;
-          <strong>
-          <Item
-          className="scrolly" 
-          as={Link}
-          href="#"
-          to='top-menu-scroll-to'
-          smooth={true}              
-          duration={800}   
-          name='portfolio'
-          id='portfolio'
-          onClick={()=>contactClick('/')}>
-          Portfolio.
-          </Item> 
-          &nbsp;
-          &nbsp;
-          </strong>
-          Please take a look around.<br></br>
-          <strong>
-          <Item
-          className="scrolly" 
-          as={Link}
-          href="#"
-          to='top-menu-scroll-to'
-          smooth={true}              
-          duration={800}   
-          name='contact'
-          id='contact'
-          onClick={()=>contactClick('/contact')}>
-            Contact me 
-          </Item>       
-          </strong>
-          &nbsp; if you have any questions!
-          </p>          
+          <div className='header-container'>
+            <Header size='huge'>
+  						<h1>Hi. I'm <strong>Greg Cameron</strong>.</h1>
+  					</Header>
+            <p>
+            And this is my &nbsp;
+            <strong>
+            <Item
+            className="scrolly" 
+            as={Link}
+            href="#"
+            to='top-menu-scroll-to'
+            smooth={true}              
+            duration={800}   
+            name='portfolio'
+            id='portfolio'
+            onClick={()=>contactClick('/')}>
+            Portfolio.
+            </Item> 
+            &nbsp;
+            &nbsp;
+            </strong>
+            Please take a look around.<br></br>
+            <strong>
+            <Item
+            className="scrolly" 
+            as={Link}
+            href="#"
+            to='top-menu-scroll-to'
+            smooth={true}              
+            duration={800}   
+            name='contact'
+            id='contact'
+            onClick={()=>contactClick('/contact')}>
+              Contact me 
+            </Item>       
+            </strong>
+            &nbsp; if you have any questions!
+            </p>          
+          </div>
         </div>
       </Container>
     </Advertisement>
