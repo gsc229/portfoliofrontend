@@ -15,6 +15,9 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
       <Container id='banner-inner-container'>        
         {/* <Image src={profilePic} circular size='medium' centered /> */}
         <div id='banner-inner-right' centered='true'>
+          <div className="photo-credit">
+            <p>Photographer: Mario Konang</p>
+          </div>
           <div className='header-container'>
             <Header size='huge'>
   						<h1>Hi. I'm <strong>Greg Cameron</strong>.</h1>
@@ -56,6 +59,7 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
             </p>          
           </div>
         </div>
+        
       </Container>
     </Advertisement>
   )
