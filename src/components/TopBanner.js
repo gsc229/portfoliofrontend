@@ -38,9 +38,8 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
             Portfolio.
             </Item> 
             &nbsp;
-            &nbsp;
             </strong>
-            Please take a look around. &nbsp;&nbsp;
+            Please take a look around. &nbsp;
             <strong>
             <Item
             className="scrolly" 

@@ -1,0 +1,28 @@
+#featured-project-container {
+  background: url("https://apod.nasa.gov/apod/image/2008/JupiterChurning_JunoGill_3279.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#featured-project-container .featured-project-header {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 200px;
+  margin: 0;
+}
+
+#featured-project-container .featured-project-header strong {
+  margin-right: 20px;
+}
+
+#featured-project-container .project-view-container {
+  width: 50%;
+  margin: 20px auto;
+  height: 400px;
+}
+/*# sourceMappingURL=featured_project_section.css.map */

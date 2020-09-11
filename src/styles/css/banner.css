@@ -28,6 +28,7 @@
 
 #top-banner #banner-inner-container {
   position: relative;
+  padding: 0;
   width: 100% !important;
   height: 90%;
   margin-top: 60px;

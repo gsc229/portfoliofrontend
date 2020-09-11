@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,2BAA2B,CAAC;EAE1B,UAAU,EAAE,8EAA8E;EAC1F,eAAe,EAAE,KAAK;EACtB,qBAAqB,EAAE,KAAK;CAqB7B;;AAzBD,AAME,2BANyB,CAMzB,wBAAwB,CAAA;EAEtB,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,MAAM,EAAE,KAAK;EACb,MAAM,EAAE,CAAC;CAKV;;AAjBH,AAcI,2BAduB,CAMzB,wBAAwB,CAQtB,MAAM,CAAA;EACJ,YAAY,EAAE,IAAI;CACnB;;AAhBL,AAmBE,2BAnByB,CAmBzB,uBAAuB,CAAA;EACrB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,SAAS;EACjB,MAAM,EAAE,KAAK;CACd",
+    "sources": [
+        "../scss/featured_project_section.scss"
+    ],
+    "names": [],
+    "file": "featured_project_section.css"
+}

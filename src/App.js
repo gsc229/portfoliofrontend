@@ -11,7 +11,7 @@ import {fas} from '@fortawesome/free-solid-svg-icons'
 import NavBar from './components/NavBar'
 import TopMenu from './components/TopMenu'
 import SideBar from './components/SideBar'
-import FeaturedProject from './components/FeaturedProject'
+import FeaturedProjectSection from './components/FeaturedProjectSection'
 import Projects from './components/Projects'
 import ProjectView from './components/ProjectView'
 import TopBanner from './components/TopBanner'
@@ -66,29 +66,7 @@ function App() {
             {/* FEATURED SECTON */}
 
             {featured_projects.length > 0 &&
-
-            <Container className='container fluid' id='featured-project-container' >
-              <div className='featured-project-header'>
-                <h2>Check out what I'm working on now:</h2>
-                <strong>
-                  <Item
-                  className="scrolly" 
-                  as={Link}
-                  href="#"
-                  to='top-menu-scroll-to'
-                  smooth={true}              
-                  duration={800}   
-                  name='portfolio'
-                  id='portfolio'>
-                  See full portfolio
-                  </Item> 
-                </strong>
-              </div>
-                    
-                {/* <FeaturedProject featuredProject={project} /> */}
-                <ProjectView projects={projects}  featured={true} />
-              
-            </Container>}
+            <FeaturedProjectSection projects={projects} />}
 
 
 
