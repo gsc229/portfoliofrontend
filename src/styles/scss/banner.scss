@@ -67,22 +67,28 @@
       .header-container{
         //border: 2px solid limegreen;
         width: fit-content;
+        max-width: 350px;
         margin: auto;
         position: relative;
-        top: 25%;
+        top: 20%;
+        @media only screen and (max-width: 350px){
+          top: 5%;
+        }
         .header{
           color: whitesmoke;
+          //border: 2px solid greenyellow;
          
         }
         
         p{
+         
           strong:nth-child(1){
              a{
                color: rgb(252, 252, 109);
              }
           }
 
-          strong:nth-child(3){
+          strong:nth-child(2){
             a{
               color: rgb(119, 226, 119);
             }

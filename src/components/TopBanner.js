@@ -40,7 +40,7 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
             &nbsp;
             &nbsp;
             </strong>
-            Please take a look around.<br></br>
+            Please take a look around. &nbsp;&nbsp;
             <strong>
             <Item
             className="scrolly" 

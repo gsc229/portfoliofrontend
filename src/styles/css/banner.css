@@ -86,9 +86,16 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  max-width: 350px;
   margin: auto;
   position: relative;
-  top: 25%;
+  top: 20%;
+}
+
+@media only screen and (max-width: 350px) {
+  #top-banner #banner-inner-container #banner-inner-right .header-container {
+    top: 5%;
+  }
 }
 
 #top-banner #banner-inner-container #banner-inner-right .header-container .header {
@@ -99,7 +106,7 @@
   color: #fcfc6d;
 }
 
-#top-banner #banner-inner-container #banner-inner-right .header-container p strong:nth-child(3) a {
+#top-banner #banner-inner-container #banner-inner-right .header-container p strong:nth-child(2) a {
   color: #77e277;
 }
 /*# sourceMappingURL=banner.css.map */
