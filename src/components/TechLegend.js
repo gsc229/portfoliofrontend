@@ -4,12 +4,13 @@ import matUi from '../images/material-ui.png'
 import matZ from '../images/materialize.png'
 import styledC from '../images/styled-components.png'
 import reactRtr from '../images/react-router-red.png'
+import redux from '../images/redux.png'
 import jinja from '../images/jinja-logo.png'
 import cloudinary from '../images/cloudinary_logo_for_white_bg.svg'
 import digO from '../images/digital-ocean.png'
+
+
 export default function TechLegend({tech}) {
-    
-    
     return (
         <div>
             
@@ -25,7 +26,7 @@ export default function TechLegend({tech}) {
             {tech === 'Mongoose' && <div id="mongoose" className="mongoose skill-logo">Mongoose</div> }
             {tech === 'React' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"></i> }
             {tech === 'React with hooks' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"><p>+ Hooks</p></i> }
-            {tech === 'React with classNamees' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"><p>(classes)</p></i> }
+            {tech === 'React with classes' && <i id="react" className="devicon-react-original-wordmark colored skill-logo"><p>(classes)</p></i> }
             {tech === 'Sass' && <i className="devicon-sass-original colored skill-logo"></i> }     
             {tech === 'CSS 3' && <i className="devicon-css3-plain-wordmark colored skill-logo"></i> }
             {tech === 'JavaScript' && <i className="devicon-javascript-plain colored skill-logo"></i> }
@@ -40,6 +41,7 @@ export default function TechLegend({tech}) {
             {tech === 'Material UI' &&  <img src={matUi} className="ui mini right spaced image skill-logo" alt="" /> }
             {tech === 'Materialize' &&  <img src={matZ} className="ui mini right spaced image skill-logo" alt="" /> }
             {tech === 'Digital Ocean' && <img id="digital-ocean" src={digO} className="skill-logo" alt=""/> }
+            {tech === 'Redux' && <img src={redux} id='redux' className="skill-logo"/> }
     
         </div>
     )
