@@ -35,14 +35,9 @@ const NavBar = ({setVisible, visible, props}) => {
         </Link>
         {visible ? <Button inverted color='grey'>X</Button> 
         : /* <<< RY OPERATROR  */
-        <Button
-          as={Link}
-          //to='top-banner'
-          
-          smooth={true}
-          offset={-50}
-          duration={800}       
-          inverted color='grey' 
+        <Button       
+          inverted 
+          color='grey' 
           onClick={openSideBar} 
         >
           More Stuff

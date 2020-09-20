@@ -104,7 +104,7 @@ export default function ProjectView({projects, props, featured=false}) {
             {technologies &&               
               technologies.map(tech=>(
                                
-                  <TechLegend key={project.id} tech={tech} />
+              <TechLegend key={`${project.id} + ${tech}`} tech={tech} />
                 
               ))
             }
