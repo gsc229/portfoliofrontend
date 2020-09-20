@@ -4,7 +4,7 @@
   background-image: url("https://apod.nasa.gov/apod/image/2004/PathNorth_Konang_2500.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100% 500px;
+  background-size: 60% 500px;
   background-position-y: -80px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,7 +66,6 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.4);
   position: relative;
   color: whitesmoke;
   padding: 30px;
@@ -100,6 +99,12 @@
 
 #top-banner #banner-inner-container #banner-inner-right .header-container .header {
   color: whitesmoke;
+}
+
+#top-banner #banner-inner-container #banner-inner-right .header-container p strong {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 #top-banner #banner-inner-container #banner-inner-right .header-container p strong:nth-child(1) a {

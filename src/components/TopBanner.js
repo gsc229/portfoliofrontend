@@ -37,9 +37,8 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
             onClick={()=>contactClick('/')}>
             Portfolio.
             </Item> 
-            &nbsp;
-            &nbsp;
             </strong>
+            &nbsp;
             Please take a look around. &nbsp;&nbsp;
             <strong>
             <Item
