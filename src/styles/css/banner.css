@@ -1,11 +1,11 @@
 #top-banner {
   width: 100%;
-  min-height: 400px;
+  background-color: black;
+  min-height: 990px;
   background-image: url("https://apod.nasa.gov/apod/image/2004/PathNorth_Konang_2500.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 60% 500px;
-  background-position-y: -80px;
+  background-position-y: -780px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +30,7 @@
   position: relative;
   width: 100% !important;
   height: 90%;
-  margin-top: 60px;
+  margin-top: 560px;
   margin-left: 0 !important;
   margin-right: 0 !important;
   display: -webkit-box;
@@ -82,6 +82,9 @@
 }
 
 #top-banner #banner-inner-container #banner-inner-right .header-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 2px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
