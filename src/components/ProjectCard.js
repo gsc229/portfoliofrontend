@@ -1,8 +1,7 @@
 import React from 'react';
 import {Card, Image} from 'semantic-ui-react'
 import { Link } from 'react-scroll';
-
-//import '../../../../portfoliobackend/media/photos/2020/05/17/market_ave_3.jpg'
+import '../styles/css/main.css'
 
 export default function ProjectCard({project, props}) {
   const colors = {
