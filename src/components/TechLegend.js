@@ -12,7 +12,7 @@ import digO from '../images/digital-ocean.png'
 
 export default function TechLegend({tech}) {
     return (
-        <div>
+        <div className='tech-icon-container'>
             
             {tech === 'Python' && <i id="python" className="devicon-python-plain-wordmark skill-logo"></i> }
             {tech === 'Django' && <i id="django" className="devicon-django-plain-wordmark skill-logo"></i> }
