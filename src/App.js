@@ -28,19 +28,19 @@ function App() {
   const [filtered, setFiltered] = useState()
   const [reFetch, callRefetch] = useState(false)
   const featured_projects = projects ? projects.filter(proj=> proj.featured) : ""
-  console.log('featured_project: ', featured_projects)
+  //console.log('featured_project: ', featured_projects)
 
   // fetch data
   useEffect(() => {
     axiosWithAuth()
     .get('/projects/')
     .then(res=>{
-      console.log(res)
+      //console.log(res)
       setProjects(res.data)
       setFiltered(res.data)
     })
     .catch(err=>{
-      console.log(err)
+      //console.log(err)
     })
   }, [reFetch]);
 
@@ -61,7 +61,7 @@ function App() {
             <Route path='/' render={(props)=> 
             <Sidebar.Pushable className='main-container' as={Segment}> 
             <Sidebar.Pusher dimmed={visible} >
-            <TopBanner props={props} visible={visible} setVisible={setVisible} />
+            <TopBanner featured_projects={featured_projects} props={props} visible={visible} setVisible={setVisible} />
             </Sidebar.Pusher>
             </Sidebar.Pushable> 
           
@@ -73,6 +73,7 @@ function App() {
             {featured_projects.length > 0 &&
             <Sidebar.Pushable className='main-container' as={Segment}> 
             <Sidebar.Pusher dimmed={visible} >
+            <div id='featured-section-scroll-to' className="scroll-to" ></div>
             <Container className='container fluid' id='featured-project-container' >
               <div className='featured-project-header'>
                 <h2>Check out what I'm working on now:</h2>
@@ -98,14 +99,11 @@ function App() {
             </Sidebar.Pusher>
             </Sidebar.Pushable> 
             }
-
-
-
             
             <Sidebar.Pushable className='main-container' as={Segment}> 
             <Sidebar.Pusher dimmed={visible} >
               {/*TOP MENU DUMMY DIV */}
-              <div id='top-menu-scroll-to' ></div>
+              <div id='top-menu-scroll-to' className="scroll-to" ></div>
               <Container id='main-projects-container'>
                   {/* TOP MENU */}
                   {filtered && <Route exact path='/' render={(props)=>

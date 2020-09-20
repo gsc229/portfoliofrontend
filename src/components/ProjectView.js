@@ -9,7 +9,7 @@ import TechLegend from './TechLegend'
 
 export default function ProjectView({projects, props, featured=false}) {  
   let project
-  console.log({projects})
+  //console.log({projects})
   if(featured){
     project = projects.find(project=> project.featured)
   }
@@ -104,7 +104,7 @@ export default function ProjectView({projects, props, featured=false}) {
             {technologies &&               
               technologies.map(tech=>(
                                
-                  <TechLegend key={project.id} tech={tech} />
+              <TechLegend key={`${project.id} + ${tech}`} tech={tech} />
                 
               ))
             }

@@ -1,11 +1,11 @@
 #top-banner {
   width: 100%;
   background-color: black;
-  min-height: 990px;
   background-image: url("https://apod.nasa.gov/apod/image/2004/PathNorth_Konang_2500.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position-y: -680px;
+  background-size: 80%;
+  background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,15 +15,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-position-x: center;
-  /* @media only screen and (max-width: 800px){
-    background-repeat: no-repeat;
-    background-size: 800px 400px;
-    background-position-y: 20px;
-    .photo-credit{
-      bottom: 580px;
-    }
-  } */
 }
 
 #top-banner .photo-credit {
@@ -37,6 +28,14 @@
   position: absolute;
   bottom: 0px;
   left: 5px;
+}
+
+@media only screen and (max-width: 1600px) {
+  #top-banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 #top-banner #banner-inner-container {
@@ -93,13 +92,7 @@
   max-width: 350px;
   margin: auto;
   position: relative;
-  top: 20%;
-}
-
-@media only screen and (max-width: 350px) {
-  #top-banner #banner-inner-container #banner-inner-right .header-container {
-    top: 5%;
-  }
+  top: 35%;
 }
 
 #top-banner #banner-inner-container #banner-inner-right .header-container .header {
@@ -122,5 +115,9 @@
 
 #top-banner #banner-inner-container #banner-inner-right .header-container p strong:nth-child(2) a {
   color: #77e277;
+}
+
+#top-banner #banner-inner-container #banner-inner-right .header-container p #contact {
+  color: #D6A7DB;
 }
 /*# sourceMappingURL=banner.css.map */

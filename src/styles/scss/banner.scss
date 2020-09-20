@@ -2,16 +2,18 @@
   width: 100%;
   //border: 2px solid yellow;
   background-color: black;
-  min-height: 990px;
+  //min-height: 990px;
   background-image: url('https://apod.nasa.gov/apod/image/2004/PathNorth_Konang_2500.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
-  //background-size: 60%;
-  background-position-y: -680px;
+  background-size: 80%;
+  background-position: center;
+  //background-position-y: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-position-x: center;
+  
+
   .photo-credit{
     //border: 1px solid yellow;
     width: fit-content;
@@ -23,14 +25,13 @@
     bottom:0px;
     left: 5px;
   }
-  /* @media only screen and (max-width: 800px){
+
+
+  @media only screen and (max-width: 1600px){
     background-repeat: no-repeat;
-    background-size: 800px 400px;
-    background-position-y: 20px;
-    .photo-credit{
-      bottom: 580px;
-    }
-  } */
+    background-size: cover;
+    background-position: center;
+  }
     
   
   #banner-inner-container{
@@ -78,10 +79,7 @@
         max-width: 350px;
         margin: auto;
         position: relative;
-        top: 20%;
-        @media only screen and (max-width: 350px){
-          top: 5%;
-        }
+        top: 35%;
         .header{
           color: whitesmoke;
           //border: 2px solid greenyellow;
@@ -95,23 +93,24 @@
             padding: 2px 4px;
             border-radius: 4px;
           };
-         
+        
           strong:nth-child(1){
-             a{
-               color: rgb(252, 252, 109);
-             }
+            a{
+              color: rgb(252, 252, 109);
+            }
           }
 
           strong:nth-child(2){
             a{
               color: rgb(119, 226, 119);
             }
-         }
-        }
+          }
 
-        
-      
-      }
+          #contact{
+              color: #D6A7DB;
+            
+          }
+      }}
       color: whitesmoke;
       padding: 30px;
 
