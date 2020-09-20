@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 !important;
 }
 
-#top-menu-scroll-to {
+.scroll-to {
   position: relative;
   top: -70px;
   height: 70px;
@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 500px) {
-  #top-menu-scroll-to {
+  .scroll-to {
     top: -60px;
   }
 }

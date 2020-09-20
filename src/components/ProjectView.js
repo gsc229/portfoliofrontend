@@ -9,7 +9,7 @@ import TechLegend from './TechLegend'
 
 export default function ProjectView({projects, props, featured=false}) {  
   let project
-  console.log({projects})
+  //console.log({projects})
   if(featured){
     project = projects.find(project=> project.featured)
   }

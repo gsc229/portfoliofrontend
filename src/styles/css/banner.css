@@ -116,4 +116,8 @@
 #top-banner #banner-inner-container #banner-inner-right .header-container p strong:nth-child(2) a {
   color: #77e277;
 }
+
+#top-banner #banner-inner-container #banner-inner-right .header-container p #contact {
+  color: #D6A7DB;
+}
 /*# sourceMappingURL=banner.css.map */

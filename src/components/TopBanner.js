@@ -13,7 +13,7 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
   }
 
   const {height, width} = useWindowDimensions()
-  
+
   return (
     <div
     style={{height: `${height}px`}} 
@@ -32,38 +32,58 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
   						<h1>Hi. I'm <strong>Greg Cameron</strong>.</h1>
   					</Header>
             <p>
-            And this is my &nbsp;
-            <strong>
-            <Item
-            className="scrolly" 
-            as={Link}
-            href="#"
-            to='top-menu-scroll-to'
-            smooth={true}              
-            duration={800}   
-            name='portfolio'
-            id='portfolio'
-            onClick={()=>contactClick('/')}>
-            Portfolio.
-            </Item> 
-            </strong>
-            &nbsp;
-            Please take a look around. &nbsp;&nbsp;
-            <strong>
-            <Item
-            className="scrolly" 
-            as={Link}
-            href="#"
-            to='top-menu-scroll-to'
-            smooth={true}              
-            duration={800}   
-            name='contact'
-            id='contact'
-            onClick={()=>contactClick('/contact')}>
-              Contact me 
-            </Item>       
-            </strong>
-            &nbsp; if you have any questions!
+                And this is my &nbsp;
+                <strong>
+                <Item
+                className="scrolly" 
+                as={Link}
+                href="#"
+                to='top-menu-scroll-to'
+                smooth={true}              
+                duration={800}   
+                name='portfolio'
+                id='portfolio'
+                onClick={()=>contactClick('/')}>
+                Portfolio.
+                </Item> 
+                </strong>
+                &nbsp;
+                Please take a look around. &nbsp;
+                {featured_projects.length > 0 &&
+                <>
+                Checkout my &nbsp; 
+                
+                  <strong>
+                  <Item
+                  className="scrolly" 
+                  as={Link}
+                  href="#"
+                  to='featured-section-scroll-to'
+                  smooth={true}              
+                  duration={800}   
+                  name='current-project'
+                  id='current-project'
+                  onClick={()=>contactClick('/')}>
+                    Current Project
+                  </Item>
+                  </strong>
+                  .<br/>
+                </>}
+                <strong>
+                <Item
+                className="scrolly" 
+                as={Link}
+                href="#"
+                to='top-menu-scroll-to'
+                smooth={true}              
+                duration={800}   
+                name='contact'
+                id='contact'
+                onClick={()=>contactClick('/contact')}>
+                  Contact me 
+                </Item>       
+                </strong>
+                &nbsp; if you have any questions!
             </p>          
           </div>
         </div>
