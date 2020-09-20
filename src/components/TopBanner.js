@@ -67,7 +67,7 @@ export default function FeaturedProjects({featured_projects, visible, setVisible
                     Current Project
                   </Item>
                   </strong>
-                  .<br/>
+                  .&nbsp;
                 </>}
                 <strong>
                 <Item
