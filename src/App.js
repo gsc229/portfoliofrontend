@@ -47,26 +47,32 @@ function App() {
 
   return (
     <React.Fragment> 
-      <Route path='/' render={(props)=> 
-      <NavBar props={props} setVisible={setVisible} visible={visible} callRefetch={callRefetch} />   } />
-      
-
-      <Sidebar.Pushable className='main-container' as={Segment}> 
       {/* SIDEBAR */}
       <Route path='/' render={(props)=>
-      <SideBar props={props} visible={visible} setVisible={setVisible}/> } />
-        <Sidebar.Pusher dimmed={visible} >
+      <SideBar props={props} visible={visible} setVisible={setVisible} /> } />
+
+      <Route path='/' render={(props)=>
+      <NavBar props={props} setVisible={setVisible} visible={visible} callRefetch={callRefetch} />} />
+      
+      
+        
       
             {/* BANNER */}
             <Route path='/' render={(props)=> 
-              <TopBanner props={props} visible={visible} setVisible={setVisible} />
-            }/>
+            <Sidebar.Pushable className='main-container' as={Segment}> 
+            <Sidebar.Pusher dimmed={visible} >
+            <TopBanner props={props} visible={visible} setVisible={setVisible} />
+            </Sidebar.Pusher>
+            </Sidebar.Pushable> 
+          
+          }/>
 
 
             {/* FEATURED SECTON */}
 
             {featured_projects.length > 0 &&
-
+            <Sidebar.Pushable className='main-container' as={Segment}> 
+            <Sidebar.Pusher dimmed={visible} >
             <Container className='container fluid' id='featured-project-container' >
               <div className='featured-project-header'>
                 <h2>Check out what I'm working on now:</h2>
@@ -88,32 +94,39 @@ function App() {
                 {/* <FeaturedProject featuredProject={project} /> */}
                 <ProjectView projects={projects}  featured={true} />
               
-            </Container>}
-
-
-
-            {/*TOP MENU DUMMY DIV */}
-            <div id='top-menu-scroll-to' ></div>         
-            <Container id='main-projects-container'>
-                {/* TOP MENU */}
-                {filtered && <Route exact path='/' render={(props)=>
-                <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>}
-        
-                {/* PROJECTS */}
-                <Route exact path='/' render={(props)=> 
-                <Projects props={props} projects={filtered} />} />
-                
-                {/* PROJECT */}
-                <Route path='/project/:id' render={(props)=> 
-                <ProjectView projects={projects} props={props} />} />
-
-                {/* CONTACT */}
-                <Route path='/contact' render={(props)=>
-                <Contact  props={props} />}/>
             </Container>
+            </Sidebar.Pusher>
+            </Sidebar.Pushable> 
+            }
+
+
+
+            
+            <Sidebar.Pushable className='main-container' as={Segment}> 
+            <Sidebar.Pusher dimmed={visible} >
+              {/*TOP MENU DUMMY DIV */}
+              <div id='top-menu-scroll-to' ></div>
+              <Container id='main-projects-container'>
+                  {/* TOP MENU */}
+                  {filtered && <Route exact path='/' render={(props)=>
+                  <TopMenu setFiltered={setFiltered} props={props} filtered={filtered} projects={projects}/>}/>}
+          
+                  {/* PROJECTS */}
+                  <Route exact path='/' render={(props)=> 
+                  <Projects props={props} projects={filtered} />} />
                   
-        </Sidebar.Pusher>
-      </Sidebar.Pushable> 
+                  {/* PROJECT */}
+                  <Route path='/project/:id' render={(props)=> 
+                  <ProjectView projects={projects} props={props} />} />
+
+                  {/* CONTACT */}
+                  <Route path='/contact' render={(props)=>
+                  <Contact  props={props} />}/>
+              </Container>
+            </Sidebar.Pusher>
+            </Sidebar.Pushable> 
+                  
+        
     </React.Fragment> 
   );
 }

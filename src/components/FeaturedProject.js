@@ -5,8 +5,6 @@ import '../styles/css/project_view.css'
 
 import TechLegend from './TechLegend'
 
-
-
 const FeaturedProject = ({featuredProject}) => {
 
 

@@ -37,7 +37,7 @@ const NavBar = ({setVisible, visible, props}) => {
         : /* <<< RY OPERATROR  */
         <Button
           as={Link}
-          to='top-banner'
+          //to='top-banner'
           
           smooth={true}
           offset={-50}

@@ -1,6 +1,5 @@
 .project-view-container{
   min-height: 900px;
-
   .project-links{
     //border: 2px solid green;
     display: flex;
@@ -49,8 +48,11 @@
   
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  .tech-icon-container{
+    margin-right: 50px;
+  }
   .skill-logo{
     font-size: 50px;
   }
