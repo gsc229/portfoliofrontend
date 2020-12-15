@@ -33,7 +33,7 @@ const SidebarExampleSidebar = ({visible, setVisible, props}) => {
           id='resume'
           
           
-          href='https://resume.io/r/l8u6bawut' 
+          href='https://resume.io/r/aGZi2coDT' 
           >
             <FontAwesomeIcon  className='sidebar-icon'  icon={['far', 'file-pdf']} />&nbsp;
             <br/><br/><p>Resume</p>
