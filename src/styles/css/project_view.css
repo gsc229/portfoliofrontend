@@ -1,6 +1,6 @@
 .project-view-container {
   min-height: 900px;
-  font-family: 'Kufam', cursive;
+  font-family: "Kufam", cursive;
 }
 
 .project-view-container .project-links {
@@ -8,9 +8,9 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 10px;
   font-size: 2rem;
 }
@@ -32,11 +32,11 @@
   margin: auto;
   cursor: pointer;
   -webkit-box-shadow: 0;
-          box-shadow: 0;
-  -webkit-transition: -webkit-box-shadow .7s;
-  transition: -webkit-box-shadow .7s;
-  transition: box-shadow .7s;
-  transition: box-shadow .7s, -webkit-box-shadow .7s;
+  box-shadow: 0;
+  -webkit-transition: -webkit-box-shadow 0.7s;
+  transition: -webkit-box-shadow 0.7s;
+  transition: box-shadow 0.7s;
+  transition: box-shadow 0.7s, -webkit-box-shadow 0.7s;
 }
 
 .project-view-container .info-container .image:hover {
@@ -49,13 +49,13 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #tech-container .tech-icon-container {
@@ -94,7 +94,7 @@
 }
 
 #tech-container #python {
-  color: #3975A5;
+  color: #3975a5;
 }
 
 #tech-container #django {

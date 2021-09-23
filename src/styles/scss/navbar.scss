@@ -1,15 +1,15 @@
-.nav-bar{
+.nav-bar {
   padding: 20px;
   position: fixed;
   top: 0;
   z-index: 1;
-  width: 100%; 
+  width: 100%;
   display: flex;
-  justify-content: space-between;  
-  background-color: #1B1C1D;
+  justify-content: space-between;
+  background-color: #1b1c1d;
   align-items: center;
-  h1{
-    font-family: 'Dancing Script', cursive;
+  h1 {
+    font-family: "Dancing Script", cursive;
     font-weight: bolder;
     width: fit-content;
     margin-right: 20px;
@@ -17,35 +17,26 @@
     position: relative;
     align-self: flex-start;
     cursor: pointer;
-
-    
   }
-  
 
-
-  .left-controls{
+  .left-controls {
     display: flex;
     justify-content: space-between;
     width: fit-content;
-    
   }
 
-  .right-controls{
+  .right-controls {
     display: flex;
     justify-content: space-between;
     width: fit-content;
-    
   }
 
-  @media screen and (max-width: '500px') {
-    h1{
+  @media screen and (max-width: "500px") {
+    h1 {
       font-size: 20px;
     }
-    .button{
+    .button {
       font-size: 10px;
     }
   }
-
-  
 }
-

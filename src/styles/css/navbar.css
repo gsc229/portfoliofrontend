@@ -8,16 +8,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #1B1C1D;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #1b1c1d;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .nav-bar h1 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: bolder;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -26,7 +26,7 @@
   color: white;
   position: relative;
   -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   cursor: pointer;
 }
 
@@ -35,8 +35,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -47,8 +47,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

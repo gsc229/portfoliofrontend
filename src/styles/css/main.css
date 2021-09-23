@@ -5,11 +5,16 @@ font-family: 'Quicksand', sans-serif;
 font-family: 'Kufam', cursive;
 */
 body {
-  font-family: 'Kufam', cursive;
+  font-family: "Kufam", cursive;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Kufam', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Kufam", cursive;
 }
 
 .pushable {
@@ -37,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #side-bar .item {
-  color: #43B3E0;
+  color: #43b3e0;
 }
 
 #side-bar .item p {
@@ -51,8 +56,8 @@ h1, h2, h3, h4, h5, h6 {
 #side-bar .sidebar-icon {
   font-size: 1.5rem;
   color: inherit;
-  -webkit-transition: color .8s;
-  transition: color .8s;
+  -webkit-transition: color 0.8s;
+  transition: color 0.8s;
 }
 
 #side-bar .sidebar-icon:hover {

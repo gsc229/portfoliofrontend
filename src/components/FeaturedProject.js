@@ -1,90 +1,139 @@
-import React from 'react'
-import {Image, Segment, Header, List, Container, Grid, Popup, Icon, Button} from 'semantic-ui-react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import '../styles/css/project_view.css'
+import React from "react";
+import {
+  Image,
+  Segment,
+  Header,
+  List,
+  Container,
+  Grid,
+  Popup,
+  Icon,
+  Button,
+} from "semantic-ui-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../styles/css/project_view.css";
 
-import TechLegend from './TechLegend'
+import TechLegend from "./TechLegend";
 
-const FeaturedProject = ({featuredProject}) => {
+const FeaturedProject = ({ featuredProject }) => {
+  const project = featuredProject
+    ? featuredProject
+    : "Wait for it, wait for it...";
 
+  const {
+    back_end_repo,
+    website,
+    web_icon,
+    top_photo,
+    description,
+    front_end_repo,
+    responsibilities,
+    roles,
+    technologies,
+    title,
+  } = project;
 
-  const project = featuredProject ? featuredProject : "Wait for it, wait for it..."
-
-  const {back_end_repo, website, web_icon, top_photo, description, front_end_repo, responsibilities, roles, technologies, title} = project
-
-  const fa_web_icon = web_icon ? [web_icon.slice(0,3), web_icon.slice(7, web_icon.length)] : ""
+  const fa_web_icon = web_icon
+    ? [web_icon.slice(0, 3), web_icon.slice(7, web_icon.length)]
+    : "";
 
   return (
-    <div className='featured-project-container'>
-          
-      <Header as='h3'>{title}</Header>
-      
+    <div className="featured-project-container">
+      <Header as="h3">{title}</Header>
+
       <List divided relaxed>
+        {front_end_repo && (
+          <List.Item>
+            <a href={front_end_repo} style={{ textDecoration: "none" }}>
+              <FontAwesomeIcon size="lg" icon={["fab", "github"]} />
+              &nbsp;Front End Repo
+            </a>
+          </List.Item>
+        )}
 
-        {front_end_repo && 
-        <List.Item>
-            <a href={front_end_repo} style={{textDecoration: 'none'}}>
-            <FontAwesomeIcon size='lg' icon={['fab', 'github']} />&nbsp;Front End Repo
-          </a>
-          
-        </List.Item>
-        }
+        {back_end_repo && (
+          <List.Item>
+            <a href={back_end_repo} style={{ textDecoration: "none" }}>
+              <FontAwesomeIcon size="lg" icon={["fab", "github"]} />
+              &nbsp;Back End Repo
+            </a>
+          </List.Item>
+        )}
 
-        {back_end_repo && 
-        <List.Item>
-          <a href={back_end_repo} style={{textDecoration: 'none'}}>  
-            <FontAwesomeIcon size='lg' icon={['fab', 'github']} />&nbsp;Back End Repo
-          </a>
-        </List.Item>
-        }
-        
         <List.Item>
           <Popup
-            style={{backgroundColor: 'black', color: 'white'}}
+            style={{ backgroundColor: "black", color: "white" }}
             basic
             trigger={
-              <Icon as='a' className='pop-up-a'  href={website} style={{textDecoration: 'none'}}>
-              <FontAwesomeIcon size='lg' icon={fa_web_icon} />
-              &nbsp; Website</Icon>
+              <Icon
+                as="a"
+                className="pop-up-a"
+                href={website}
+                style={{ textDecoration: "none" }}
+              >
+                <FontAwesomeIcon size="lg" icon={fa_web_icon} />
+                &nbsp; Website
+              </Icon>
             }
-         >
-           <Popup.Content style={{textAlign: 'center'}} >
-            <FontAwesomeIcon style={{color: 'orange', margin: '3px auto', fontSize: '15px'}} icon={['fas', 'info-circle']} /><br/>
-           Please note that some apps are not full-scale procuction apps. After clicking this link, it may hang 10-15 seconds before the server<br/>"wakes up".
-           </Popup.Content>
-         </Popup>
-            
-          
-        </List.Item>      
-      </List>{/*END LINKS  */} 
+          >
+            <Popup.Content style={{ textAlign: "center" }}>
+              <FontAwesomeIcon
+                style={{
+                  color: "orange",
+                  margin: "3px auto",
+                  fontSize: "15px",
+                }}
+                icon={["fas", "info-circle"]}
+              />
+              <br />
+              Please note that some apps are not full-scale procuction apps.
+              After clicking this link, it may hang 10-15 seconds before the
+              server
+              <br />
+              "wakes up".
+            </Popup.Content>
+          </Popup>
+        </List.Item>
+      </List>
+      {/*END LINKS  */}
 
-
-      <Container className='info-container'>
-        <Grid stackable columns={2} relaxed='very'>
+      <Container className="info-container">
+        <Grid stackable columns={2} relaxed="very">
           <Grid.Column>
-          <Image className='view-image' size='huge' src={top_photo} alt=""/>
+            <Image className="view-image" size="huge" src={top_photo} alt="" />
           </Grid.Column>
           <Grid.Column>
-            {description && <div style={{margin: '20px 0'}}><h3>About: </h3><p style={{paddingRight: '20px'}}>{description}</p></div>}
-            {roles && <div style={{margin: '20px 0'}}><h3>Roles: </h3><p style={{paddingRight: '20px'}}>{roles}</p></div>}
-            {responsibilities && <div style={{margin: '20px 0'}}><h3>Responsibilities: </h3><p style={{paddingRight: '20px'}}>{responsibilities}</p></div>}
+            {description && (
+              <div style={{ margin: "20px 0" }}>
+                <h3>About: </h3>
+                <p style={{ paddingRight: "20px" }}>{description}</p>
+              </div>
+            )}
+            {roles && (
+              <div style={{ margin: "20px 0" }}>
+                <h3>Roles: </h3>
+                <p style={{ paddingRight: "20px" }}>{roles}</p>
+              </div>
+            )}
+            {responsibilities && (
+              <div style={{ margin: "20px 0" }}>
+                <h3>Responsibilities: </h3>
+                <p style={{ paddingRight: "20px" }}>{responsibilities}</p>
+              </div>
+            )}
             <h3>Technologies: </h3>
 
-            <div id='tech-container'>
-            {technologies &&               
-              technologies.map(tech=>(
-                               
-                <TechLegend key={project.id} tech={tech} />
-                
-              ))}
-           
+            <div id="tech-container">
+              {technologies &&
+                technologies.map((tech) => (
+                  <TechLegend key={project.id} tech={tech} />
+                ))}
             </div>
-            
           </Grid.Column>
-        </Grid>        
+        </Grid>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturedProject
+export default FeaturedProject;

@@ -1,14 +1,14 @@
-.project-view-container{
+.project-view-container {
   min-height: 900px;
-  font-family: 'Kufam', cursive;
-  .project-links{
+  font-family: "Kufam", cursive;
+  .project-links {
     //border: 2px solid green;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    @media only screen and (max-width: 800px){
+    @media only screen and (max-width: 800px) {
       font-size: 1.5rem;
-      a{
+      a {
         margin: 15px;
       }
     }
@@ -16,119 +16,106 @@
     font-size: 2rem;
   }
 
-
-  .info-container{
+  .info-container {
     //border: 2px solid yellow;
     width: 100%;
-    .image{
-      margin: auto;     
+    .image {
+      margin: auto;
       //width: 90%;
       //margin: 30px auto;
       cursor: pointer;
       box-shadow: 0;
-      transition: box-shadow .7s;
-      
-      &:hover{
-          //border: lightgray 2px solid;
-          -webkit-box-shadow: -1px 2px 11px 0px rgba(0,0,0,0.75);
-          -moz-box-shadow: -1px 2px 11px 0px rgba(0,0,0,0.75);
-          box-shadow: -1px 2px 11px 0px rgba(0,0,0,0.75);
-          
+      transition: box-shadow 0.7s;
+
+      &:hover {
+        //border: lightgray 2px solid;
+        -webkit-box-shadow: -1px 2px 11px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 2px 11px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 2px 11px 0px rgba(0, 0, 0, 0.75);
       }
     }
-    
-    
   }
-
-  
 }
 
-
-#tech-container{
+#tech-container {
   //border: 2px solid magenta;
-  
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  .tech-icon-container{
+  .tech-icon-container {
     margin: 10px 0;
     margin-right: 50px;
-
   }
-  .skill-logo{
+  .skill-logo {
     font-size: 50px;
   }
 
-  #node-express{
+  #node-express {
     //border: 2px solid blue;
     width: fit-content;
   }
-  
-  #python-django{
-  //border: lime 2px solid;
-  width: fit-content;
-  
+
+  #python-django {
+    //border: lime 2px solid;
+    width: fit-content;
   }
-  #mongo-mongoose{
-    width: fit-content; 
-    //border: 2px solid red; 
+  #mongo-mongoose {
+    width: fit-content;
+    //border: 2px solid red;
     //margin: auto;
   }
-  #mongoose{
-    
+  #mongoose {
     font-size: 30px;
     font-weight: 100;
     text-indent: -2px;
     letter-spacing: -4px;
     color: #800;
   }
-  
-  
-  #python{
-    color: #3975A5;
+
+  #python {
+    color: #3975a5;
   }
-  #django{
+  #django {
     color: forestgreen;
   }
-  
-  #node{
+
+  #node {
     color: lime;
   }
-  
-  #jinja{    
+
+  #jinja {
     width: 100px;
   }
-  
-  #cloudinary{
+
+  #cloudinary {
     width: 150px;
   }
-    
-  #digital-ocean{
+
+  #digital-ocean {
     width: 60px;
   }
-  
-  #react-router{
+
+  #react-router {
     width: 150px;
   }
-  
-  #styled-components{
+
+  #styled-components {
     width: 100px;
   }
-  
-  #react p{
+
+  #react p {
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
   }
 
-  #redux{
+  #redux {
     width: 100px;
   }
-  
-  #axios{
+
+  #axios {
     font-size: 20px;
   }
-
 }
-
