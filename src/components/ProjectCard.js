@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
 import { Link } from "react-scroll";
+import dayjs from "dayjs";
 import "../styles/css/main.css";
 
 export default function ProjectCard({ project, props }) {
@@ -33,6 +34,7 @@ export default function ProjectCard({ project, props }) {
       </Card.Content>
       <Card.Content>
         <p>{project_type}</p>
+        <p>{dayjs(project.created_at).format("MM/DD/YYYY")}</p>
       </Card.Content>
     </Card>
   );
