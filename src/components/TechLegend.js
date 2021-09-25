@@ -47,6 +47,9 @@ export default function TechLegend({ tech }) {
           Mongoose
         </div>
       )}
+      {tech === "TypeScript" && (
+        <i id="typescript" class="devicon-typescript-plain colored"></i>
+      )}
       {tech === "React" && (
         <i
           id="react"
@@ -136,7 +139,7 @@ export default function TechLegend({ tech }) {
         <img id="digital-ocean" src={digO} className="skill-logo" alt="" />
       )}
       {tech === "Redux" && (
-        <img src={redux} id="redux" className="skill-logo" />
+        <img src={redux} id="redux" className="skill-logo" alt="redux" />
       )}
     </div>
   );

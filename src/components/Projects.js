@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import "../styles/css/projects.css";
 
 const Projects = ({ projects, props }) => {
-  console.log({projects})
+  
   return (
     <div className="all-projects-container">
       {projects ? (

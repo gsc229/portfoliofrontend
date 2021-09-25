@@ -43,6 +43,7 @@ export default function ProjectView({ projects, props, featured = false }) {
     ? [web_icon.slice(0, 3), web_icon.slice(7, web_icon.length)]
     : "";
 
+  console.log({technologies})
   return (
     <Segment className="project-view-container">
       {!featured && (
@@ -166,7 +167,7 @@ export default function ProjectView({ projects, props, featured = false }) {
               </div>
             )}
             <h3>Technologies: </h3>
-
+            
             <div id="tech-container">
               {technologies &&
                 technologies.map((tech) => (

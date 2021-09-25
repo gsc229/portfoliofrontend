@@ -8,9 +8,9 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 10px;
   font-size: 2rem;
 }
@@ -32,7 +32,7 @@
   margin: auto;
   cursor: pointer;
   -webkit-box-shadow: 0;
-  box-shadow: 0;
+          box-shadow: 0;
   -webkit-transition: -webkit-box-shadow 0.7s;
   transition: -webkit-box-shadow 0.7s;
   transition: box-shadow 0.7s;
@@ -49,13 +49,13 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #tech-container .tech-icon-container {
@@ -91,6 +91,10 @@
   text-indent: -2px;
   letter-spacing: -4px;
   color: #800;
+}
+
+#tech-container #typescript {
+  font-size: 30px;
 }
 
 #tech-container #python {
@@ -138,4 +142,3 @@
 #tech-container #axios {
   font-size: 20px;
 }
-/*# sourceMappingURL=project_view.css.map */

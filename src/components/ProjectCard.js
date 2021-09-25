@@ -12,12 +12,7 @@ export default function ProjectCard({ project, props }) {
   };
 
   // card info:
-  const { website, top_photo, project_type, title } = project;
-  /* const handleClick = () =>{
-    window.scrollTo({
-      
-    })
-  } */
+  const { top_photo, project_type, title } = project;
 
   return (
     <Card
