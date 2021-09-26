@@ -47,9 +47,6 @@ export default function TechLegend({ tech }) {
           Mongoose
         </div>
       )}
-      {tech === "TypeScript" && (
-        <i id="typescript" class="devicon-typescript-plain colored"></i>
-      )}
       {tech === "React" && (
         <i
           id="react"
@@ -80,6 +77,9 @@ export default function TechLegend({ tech }) {
       )}
       {tech === "JavaScript" && (
         <i className="devicon-javascript-plain colored skill-logo"></i>
+      )}      
+      {tech === "TypeScript" && (
+        <i className="devicon-typescript-plain colored skill-logo"></i>
       )}
       {tech === "Less" && (
         <i className="devicon-less-plain-wordmark colored skill-logo"></i>
