@@ -86,7 +86,7 @@ const FeaturedProject = ({ featuredProject }) => {
                 icon={["fas", "info-circle"]}
               />
               <br />
-              Please note that some apps are not full-scale procuction apps.
+              Please note: some apps are not full-scale production apps.
               After clicking this link, it may hang 10-15 seconds before the
               server
               <br />
